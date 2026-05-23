@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-playfair: "Playfair Display", Georgia, serif;
+    --font-inter: "Inter", system-ui, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-limonar-cream text-limonar-charcoal antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  ::selection {
+    @apply bg-limonar-terracotta/20 text-limonar-terracotta;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-limonar-sand;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-limonar-terracotta/40 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-limonar-terracotta/70;
+  }
+}
+
+@layer components {
+  .container-limonar {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-pad {
+    @apply py-20 md:py-28;
+  }
+
+  .heading-display {
+    @apply font-display font-bold leading-tight tracking-tight;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-limonar-terracotta text-white font-semibold rounded-lg transition-all duration-200 hover:bg-limonar-terracottaDark hover:shadow-warm active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-limonar-terracotta focus-visible:ring-offset-2;
+  }
+
+  .btn-lime {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-limonar-lime text-white font-semibold rounded-lg transition-all duration-200 hover:bg-limonar-limeDark hover:shadow-warm active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-limonar-lime focus-visible:ring-offset-2;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-limonar-terracotta text-limonar-terracotta font-semibold rounded-lg transition-all duration-200 hover:bg-limonar-terracotta hover:text-white active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 text-limonar-charcoal font-semibold rounded-lg transition-all duration-200 hover:bg-limonar-sand active:scale-95;
+  }
+
+  .card-limonar {
+    @apply bg-white rounded-2xl shadow-warm border border-limonar-sand/60 overflow-hidden;
+  }
+
+  .brick-texture {
+    background-color: #C1440E;
+    background-image:
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 9.5px,
+        rgba(0,0,0,0.15) 9.5px,
+        rgba(0,0,0,0.15) 10px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 19px,
+        rgba(0,0,0,0.1) 19px,
+        rgba(0,0,0,0.1) 20px
+      );
+  }
+
+  .gradient-text-terracotta {
+    @apply bg-gradient-to-r from-limonar-terracotta to-limonar-terracottaLight bg-clip-text text-transparent;
+  }
+
+  .gradient-text-lime {
+    @apply bg-gradient-to-r from-limonar-limeDark to-limonar-lime bg-clip-text text-transparent;
+  }
+
+  .mortar-line {
+    @apply h-0.5 bg-limonar-mortar/30 animate-mortar-spread;
+  }
+
+  .farol-glow {
+    filter: drop-shadow(0 0 12px rgba(212,160,23,0.5));
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
