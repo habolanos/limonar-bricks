@@ -4,12 +4,12 @@ import { cn } from "@/lib/utils";
 type BadgeVariant = "terracotta" | "lime" | "gold" | "sand" | "dark" | "outline";
 
 const variantClasses: Record<BadgeVariant, string> = {
-  terracotta: "bg-limonar-terracotta/10 text-limonar-terracotta border border-limonar-terracotta/30",
-  lime: "bg-limonar-lime/10 text-limonar-limeDark border border-limonar-lime/30",
-  gold: "bg-limonar-gold/10 text-limonar-gold border border-limonar-gold/30",
-  sand: "bg-limonar-sand text-limonar-mortar border border-limonar-sandDark/40",
+  terracotta: "bg-limonar-terracotta text-white border border-limonar-terracottaDark",
+  lime: "bg-limonar-lime text-limonar-charcoal border border-limonar-limeDark",
+  gold: "bg-limonar-lime text-limonar-charcoal border border-limonar-limeDark",
+  sand: "bg-limonar-sand text-limonar-charcoal border border-limonar-sandDark",
   dark: "bg-limonar-charcoal text-white border border-limonar-charcoalLight",
-  outline: "bg-transparent text-limonar-terracotta border border-limonar-terracotta",
+  outline: "bg-transparent text-limonar-charcoal border border-limonar-charcoal",
 };
 
 interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {

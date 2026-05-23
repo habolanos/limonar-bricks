@@ -18,7 +18,7 @@
   }
 
   ::selection {
-    @apply bg-limonar-terracotta/20 text-limonar-terracotta;
+    @apply bg-limonar-lime/30 text-limonar-charcoal;
   }
 
   ::-webkit-scrollbar {
@@ -28,10 +28,10 @@
     @apply bg-limonar-sand;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-limonar-terracotta/40 rounded-full;
+    @apply bg-limonar-lime/60 rounded-full;
   }
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-limonar-terracotta/70;
+    @apply bg-limonar-lime rounded-full;
   }
 }
 
@@ -69,7 +69,7 @@
   }
 
   .brick-texture {
-    background-color: #8B4513;
+    background-color: #0A0A0A;
     background-image:
       repeating-linear-gradient(
         90deg,
@@ -87,12 +87,27 @@
       );
   }
 
+  /* On dark backgrounds: lime text is readable */
+  .text-on-dark {
+    @apply text-white;
+  }
+
+  /* On lime/green backgrounds: always use black for contrast */
+  .text-on-lime {
+    @apply text-limonar-charcoal;
+  }
+
+  /* On light/cream backgrounds: use near-black */
+  .text-on-light {
+    @apply text-limonar-charcoal;
+  }
+
   .gradient-text-terracotta {
     @apply bg-gradient-to-r from-limonar-terracotta to-limonar-terracottaLight bg-clip-text text-transparent;
   }
 
   .gradient-text-lime {
-    @apply bg-gradient-to-r from-limonar-limeDark to-limonar-lime bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-limonar-lime to-limonar-limeLight bg-clip-text text-transparent;
   }
 
   .mortar-line {
@@ -100,7 +115,7 @@
   }
 
   .farol-glow {
-    filter: drop-shadow(0 0 12px rgba(153,204,0,0.5));
+    filter: drop-shadow(0 0 16px rgba(0,222,0,0.6));
   }
 }
 
