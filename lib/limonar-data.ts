@@ -97,14 +97,14 @@ export interface ManifestoCard {
 export const brickProducts: BrickProduct[] = [
   {
     id: "farol",
-    name: "Ladrillo Farol",
+    name: "Ladrillo Farol Rayado",
     nickname: "El Insignia",
     dimensions: { w: 10, h: 20, l: 30 },
     weightKg: 3.2,
     bricksPerPallet: 50,
-    pricePerUnit: { min: 850, max: 1100 },
+    pricePerUnit: { min: 1400, max: 1400 },
     description:
-      "Nuestro ladrillo estrella. Fabricado con arcilla seleccionada del Valle del Cauca, cocido a 1,050°C durante 48 horas. Cada Farol lleva décadas de saber artesanal y cero concesiones en calidad.",
+      "Nuestro ladrillo estrella con acabado rayado. Fabricado con arcilla seleccionada del Valle del Cauca, cocido a 1,050°C durante 48 horas. Cada Farol lleva décadas de saber artesanal y cero concesiones en calidad.",
     uses: [
       "Muros estructurales",
       "Fachadas de vivienda",
@@ -118,10 +118,10 @@ export const brickProducts: BrickProduct[] = [
     id: "tolete",
     name: "Ladrillo Tolete",
     nickname: "El Versátil",
-    dimensions: { w: 6.5, h: 12, l: 25 },
+    dimensions: { w: 10, h: 8, l: 25 },
     weightKg: 1.8,
     bricksPerPallet: 80,
-    pricePerUnit: { min: 420, max: 580 },
+    pricePerUnit: { min: 500, max: 500 },
     description:
       "Compacto y resistente. El favorito de los maestros para divisiones internas y acabados. Su peso ligero facilita el trabajo sin sacrificar resistencia.",
     uses: [
@@ -135,12 +135,12 @@ export const brickProducts: BrickProduct[] = [
   },
   {
     id: "bloque",
-    name: "Bloque Limonar",
+    name: "Bloquelón Limonar",
     nickname: "El Estructural",
-    dimensions: { w: 12, h: 20, l: 40 },
+    dimensions: { w: 80, h: 8, l: 30 },
     weightKg: 7.5,
     bricksPerPallet: 30,
-    pricePerUnit: { min: 1800, max: 2400 },
+    pricePerUnit: { min: 5000, max: 5000 },
     description:
       "Para proyectos que exigen máxima resistencia. Con celdas internas que optimizan el uso de concreto en columnas integradas. El aliado de constructores exigentes.",
     uses: [
@@ -154,14 +154,14 @@ export const brickProducts: BrickProduct[] = [
   },
   {
     id: "especial",
-    name: "Ladrillo Especial Limonar",
+    name: "Ladrillo Farol Cara Lisa",
     nickname: "El Exclusivo",
     dimensions: { w: 10, h: 20, l: 30 },
     weightKg: 3.4,
     bricksPerPallet: 50,
-    pricePerUnit: { min: 2200, max: 3500 },
+    pricePerUnit: { min: 1550, max: 1550 },
     description:
-      "Acabado artesanal premium con textura vintage. Disponible en tonos: Terracota Clásico, Arcilla Natural y Óxido Andino. Para fachadas que enamoran a primera vista.",
+      "Ladrillo Farol con acabado liso premium. Ideal para fachadas que requieren un acabado más refinado. Misma calidad del Farol tradicional con superficie perfectamente lisa.",
     uses: [
       "Fachadas premium",
       "Muros decorativos",
