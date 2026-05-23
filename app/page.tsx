@@ -26,8 +26,8 @@ function ParticleField() {
           style={{
             left: `${(i * 47) % 100}%`,
             top: `${(i * 31) % 100}%`,
-            backgroundColor: i % 2 === 0 ? "#D4A017" : "#7CB518",
-            opacity: 0.3 + (i % 5) * 0.1,
+            backgroundColor: i % 2 === 0 ? "#00CC00" : "#8B4513",
+            opacity: 0.15 + (i % 5) * 0.05,
           }}
           animate={{
             y: [0, -40 - (i % 30), 0],
@@ -54,20 +54,20 @@ function HeroSection() {
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero-gradient">
+    <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
       <ParticleField />
       <motion.div style={{ y, opacity }} className="relative z-10 container-limonar text-center pt-20">
         <motion.div variants={fadeUp} custom={0} initial="hidden" animate="visible"
-          className="inline-flex items-center gap-2 bg-limonar-terracotta/20 border border-limonar-terracotta/40 rounded-full px-5 py-2 mb-8">
-          <span className="w-2 h-2 rounded-full bg-limonar-terracottaLight animate-pulse-warm" />
-          <span className="text-limonar-terracottaLight text-sm font-medium">Valle del Cauca · Colombia · Desde la tierra</span>
+          className="inline-flex items-center gap-2 bg-limonar-lime/10 border border-limonar-lime/40 rounded-full px-5 py-2 mb-8">
+          <span className="w-2 h-2 rounded-full bg-limonar-lime animate-pulse-warm" />
+          <span className="text-limonar-limeDark text-sm font-medium">Valle del Cauca · Colombia · Desde la tierra</span>
         </motion.div>
 
         <motion.h1 variants={fadeUp} custom={1} initial="hidden" animate="visible"
-          className="font-display font-bold text-5xl md:text-7xl lg:text-8xl text-white leading-none mb-6 tracking-tight">
+          className="font-display font-bold text-5xl md:text-7xl lg:text-8xl text-limonar-charcoal leading-none mb-6 tracking-tight">
           Cada ladrillo tiene el{" "}
           <span className="relative">
-            <span className="text-limonar-terracottaLight">nombre</span>
+            <span className="text-limonar-terracotta">nombre</span>
             <motion.div
               className="absolute -bottom-1 left-0 h-0.5 bg-limonar-gold"
               initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
@@ -75,13 +75,13 @@ function HeroSection() {
             />
           </span>{" "}
           de quien{" "}
-          <span className="text-limonar-limeLight">lo soñó.</span>
+          <span className="text-limonar-lime">lo soñó.</span>
         </motion.h1>
 
         <motion.p variants={fadeUp} custom={2} initial="hidden" animate="visible"
-          className="text-white/70 text-xl md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed">
+          className="text-limonar-charcoalLight text-xl md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed">
           Ladrillera Limonar — Fabricamos el material.<br />
-          <strong className="text-white">Tú construyes la historia.</strong>
+          <strong className="text-limonar-charcoal">Tú construyes la historia.</strong>
         </motion.p>
 
         <motion.div variants={fadeUp} custom={3} initial="hidden" animate="visible"
@@ -92,7 +92,7 @@ function HeroSection() {
               <ArrowRight className="h-5 w-5" />
             </Link>
           </Button>
-          <Button variant="ghost-white" size="xl" asChild>
+          <Button variant="outline" size="xl" asChild>
             <Link href="/nosotros">
               Ver nuestra historia
               <ChevronDown className="h-5 w-5" />
@@ -104,9 +104,9 @@ function HeroSection() {
         <motion.div variants={fadeUp} custom={4} initial="hidden" animate="visible"
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
           {companyStats.map((s) => (
-            <div key={s.label} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4">
-              <p className="text-2xl font-display font-bold text-limonar-terracottaLight">{s.value}</p>
-              <p className="text-white/60 text-xs mt-1 leading-tight">{s.label}</p>
+            <div key={s.label} className="bg-limonar-sandLight border border-limonar-sandDark rounded-2xl p-4">
+              <p className="text-2xl font-display font-bold text-limonar-lime">{s.value}</p>
+              <p className="text-limonar-charcoalLight text-xs mt-1 leading-tight">{s.label}</p>
             </div>
           ))}
         </motion.div>
@@ -116,8 +116,8 @@ function HeroSection() {
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 2 }}>
-        <span className="text-white/40 text-xs uppercase tracking-widest">Scroll</span>
-        <ChevronDown className="h-5 w-5 text-white/40" />
+        <span className="text-limonar-mortar text-xs uppercase tracking-widest">Scroll</span>
+        <ChevronDown className="h-5 w-5 text-limonar-mortar" />
       </motion.div>
     </section>
   );
@@ -125,15 +125,14 @@ function HeroSection() {
 
 function ManifestoSection() {
   return (
-    <section className="py-24 bg-limonar-charcoal relative overflow-hidden">
-      <div className="absolute inset-0 brick-texture opacity-10" />
+    <section className="py-24 bg-limonar-sandLight relative overflow-hidden">
       <div className="container-limonar relative z-10">
         <div className="text-center mb-16">
-          <span className="text-limonar-terracottaLight text-sm font-semibold uppercase tracking-widest">Nuestro Manifiesto</span>
-          <h2 className="font-display font-bold text-4xl md:text-5xl text-white mt-3">
+          <span className="text-limonar-lime text-sm font-semibold uppercase tracking-widest">Nuestro Manifiesto</span>
+          <h2 className="font-display font-bold text-4xl md:text-5xl text-limonar-charcoal mt-3">
             Lo que nos mueve
           </h2>
-          <p className="text-white/50 mt-4 max-w-xl mx-auto">
+          <p className="text-limonar-charcoalLight mt-4 max-w-xl mx-auto">
             Cinco principios que guían cada decisión, desde la mezcla de arcilla hasta la entrega en tu obra.
           </p>
         </div>
@@ -145,16 +144,16 @@ function ManifestoSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-7 hover:border-limonar-terracotta/40 hover:bg-white/8 transition-all duration-300 cursor-default"
+              className="group relative bg-white border border-limonar-sandDark rounded-2xl p-7 hover:border-limonar-lime/50 hover:shadow-warm transition-all duration-300 cursor-default"
             >
-              <div className="absolute top-5 right-5 font-display font-bold text-6xl text-white/5 group-hover:text-limonar-terracotta/10 transition-colors">
+              <div className="absolute top-5 right-5 font-display font-bold text-6xl text-limonar-sandDark group-hover:text-limonar-lime/20 transition-colors">
                 {card.number}
               </div>
-              <div className="w-10 h-1 bg-limonar-terracotta rounded-full mb-5" />
-              <h3 className="font-display font-bold text-lg text-white mb-3 pr-8 leading-tight">
+              <div className="w-10 h-1 bg-limonar-lime rounded-full mb-5" />
+              <h3 className="font-display font-bold text-lg text-limonar-charcoal mb-3 pr-8 leading-tight">
                 {card.principle}
               </h3>
-              <p className="text-white/50 text-sm leading-relaxed">{card.description}</p>
+              <p className="text-limonar-charcoalLight text-sm leading-relaxed">{card.description}</p>
             </motion.div>
           ))}
           {/* 6th card — CTA */}
@@ -163,17 +162,17 @@ function ManifestoSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="bg-limonar-terracotta rounded-2xl p-7 flex flex-col justify-between"
+            className="bg-limonar-lime rounded-2xl p-7 flex flex-col justify-between"
           >
             <div>
-              <p className="font-display font-bold text-2xl text-white leading-tight mb-3">
+              <p className="font-display font-bold text-2xl text-limonar-charcoal leading-tight mb-3">
                 "El cliente es el centro del ladrillo."
               </p>
-              <p className="text-white/80 text-sm leading-relaxed">
+              <p className="text-limonar-charcoal/70 text-sm leading-relaxed">
                 No somos una fábrica. Somos una familia que construye contigo.
               </p>
             </div>
-            <Button variant="ghost-white" size="md" asChild className="mt-6 self-start">
+            <Button variant="dark" size="md" asChild className="mt-6 self-start">
               <Link href="/nosotros">Conocer la historia <ArrowRight className="h-4 w-4" /></Link>
             </Button>
           </motion.div>
@@ -295,8 +294,7 @@ function TrustSection() {
 
 function CTASection() {
   return (
-    <section className="py-24 bg-limonar-terracotta relative overflow-hidden">
-      <div className="absolute inset-0 brick-texture opacity-20" />
+    <section className="py-24 bg-limonar-lime relative overflow-hidden">
       <div className="container-limonar relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -304,11 +302,11 @@ function CTASection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-display font-bold text-4xl md:text-6xl text-white mb-6 leading-tight">
+          <h2 className="font-display font-bold text-4xl md:text-6xl text-limonar-charcoal mb-6 leading-tight">
             Tú no compras ladrillos.<br />
-            <span className="text-limonar-gold">Tú construyes legados.</span>
+            <span className="text-limonar-terracotta">Tú construyes legados.</span>
           </h2>
-          <p className="text-white/80 text-xl mb-10 max-w-xl mx-auto">
+          <p className="text-limonar-charcoal/70 text-xl mb-10 max-w-xl mx-auto">
             Únete a miles de maestros y familias colombianas que ya confían en Limonar para edificar su futuro.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -318,7 +316,7 @@ function CTASection() {
                 Calcular mi obra ahora
               </Link>
             </Button>
-            <Button variant="ghost-white" size="xl" asChild>
+            <Button variant="outline" size="xl" asChild>
               <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="h-5 w-5" />
                 Hablar con un asesor
