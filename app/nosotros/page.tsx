@@ -57,13 +57,13 @@ export default function NosotrosPage() {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-limonar-charcoal rounded-3xl p-8 shadow-warm"
+              className="bg-white border-2 border-limonar-lime rounded-3xl p-8 shadow-warm"
             >
-              <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center mb-5">
-                <Target className="h-6 w-6 text-limonar-gold" />
+              <div className="w-12 h-12 rounded-2xl bg-limonar-lime/10 flex items-center justify-center mb-5">
+                <Target className="h-6 w-6 text-limonar-lime" />
               </div>
-              <h2 className="font-display font-bold text-2xl text-white mb-4">Nuestra Visión</h2>
-              <p className="text-white/70 leading-relaxed">
+              <h2 className="font-display font-bold text-2xl text-limonar-charcoal mb-4">Nuestra Visión</h2>
+              <p className="text-limonar-charcoalLight leading-relaxed">
                 Ser la ladrillera de referencia en Colombia y Latinoamérica para 2030, expandiendo nuestra producción a mercados internacionales con un modelo sostenible, trazable y centrado en las personas.
               </p>
             </motion.div>

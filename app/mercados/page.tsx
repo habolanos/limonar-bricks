@@ -19,14 +19,13 @@ const phaseLabels: Record<string, string> = {
 export default function MercadosPage() {
   return (
     <div className="pt-20">
-      <section className="py-20 bg-limonar-charcoal relative overflow-hidden">
-        <div className="absolute inset-0 brick-texture opacity-10" />
+      <section className="py-20 bg-white relative overflow-hidden border-b border-limonar-sandDark">
         <div className="container-limonar relative z-10 text-center">
-          <TrendingUp className="h-12 w-12 text-limonar-gold mx-auto mb-5" />
-          <h1 className="font-display font-bold text-5xl md:text-6xl text-white mb-4">
+          <TrendingUp className="h-12 w-12 text-limonar-lime mx-auto mb-5" />
+          <h1 className="font-display font-bold text-5xl md:text-6xl text-limonar-charcoal mb-4">
             Expansión de mercados
           </h1>
-          <p className="text-white/60 text-lg max-w-xl mx-auto">
+          <p className="text-limonar-charcoalLight text-lg max-w-xl mx-auto">
             Desde el Valle del Cauca al mundo. Nuestro plan de expansión geográfico, responsable y sostenible.
           </p>
         </div>

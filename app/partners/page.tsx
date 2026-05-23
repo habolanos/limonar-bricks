@@ -11,14 +11,13 @@ const typeIcons = { ferreteria: Building2, distribuidor: TruckIcon, constructor:
 export default function PartnersPage() {
   return (
     <div className="pt-20">
-      <section className="py-20 bg-limonar-charcoal relative overflow-hidden">
-        <div className="absolute inset-0 brick-texture opacity-10" />
+      <section className="py-20 bg-white relative overflow-hidden border-b border-limonar-sandDark">
         <div className="container-limonar relative z-10 text-center">
           <span className="text-limonar-lime text-sm font-semibold uppercase tracking-widest block mb-3">Portal B2B</span>
-          <h1 className="font-display font-bold text-5xl md:text-6xl text-white mb-4">
-            Partners <span className="text-limonar-limeLight">Limonar</span>
+          <h1 className="font-display font-bold text-5xl md:text-6xl text-limonar-charcoal mb-4">
+            Partners <span className="text-limonar-lime">Limonar</span>
           </h1>
-          <p className="text-white/60 text-lg max-w-xl mx-auto mb-8">
+          <p className="text-limonar-charcoalLight text-lg max-w-xl mx-auto mb-8">
             Ferreterías, distribuidores y constructores: únete a nuestra red y accede a precios de mayoreo, material co-branded y soporte dedicado.
           </p>
           <Button variant="lime" size="xl" asChild>

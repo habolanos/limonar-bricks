@@ -25,18 +25,17 @@ export default function MaestrosPage() {
   return (
     <div className="pt-20">
       {/* Hero */}
-      <section className="py-20 bg-limonar-charcoal relative overflow-hidden">
-        <div className="absolute inset-0 brick-texture opacity-10" />
+      <section className="py-20 bg-white relative overflow-hidden border-b border-limonar-sandDark">
         <div className="container-limonar relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-limonar-gold/20 border border-limonar-gold/40 rounded-full px-5 py-2 mb-6">
-            <Trophy className="h-4 w-4 text-limonar-gold" />
-            <span className="text-limonar-gold text-sm font-medium">Programa de fidelización</span>
+          <div className="inline-flex items-center gap-2 bg-limonar-lime/10 border border-limonar-lime/40 rounded-full px-5 py-2 mb-6">
+            <Trophy className="h-4 w-4 text-limonar-lime" />
+            <span className="text-limonar-lime text-sm font-medium">Programa de fidelización</span>
           </div>
-          <h1 className="font-display font-bold text-5xl md:text-6xl text-white mb-4">
+          <h1 className="font-display font-bold text-5xl md:text-6xl text-limonar-charcoal mb-4">
             Programa Maestros<br />
-            <span className="text-limonar-gold">Limonar</span>
+            <span className="text-limonar-lime">Limonar</span>
           </h1>
-          <p className="text-white/60 text-lg max-w-xl mx-auto mb-8">
+          <p className="text-limonar-charcoalLight text-lg max-w-xl mx-auto mb-8">
             El mejor maestro merece el mejor ladrillo y las mejores condiciones. Compra, acumula puntos y desbloquea beneficios exclusivos.
           </p>
           <Button variant="primary" size="xl" asChild>

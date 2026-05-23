@@ -10,14 +10,13 @@ export const metadata = {
 export default function CalculadoraPage() {
   return (
     <div className="pt-20">
-      <section className="py-16 bg-limonar-charcoal relative overflow-hidden">
-        <div className="absolute inset-0 brick-texture opacity-10" />
+      <section className="py-16 bg-white relative overflow-hidden border-b border-limonar-sandDark">
         <div className="container-limonar relative z-10 text-center">
-          <Badge variant="terracotta" className="mb-4">Herramienta profesional</Badge>
-          <h1 className="font-display font-bold text-4xl md:text-5xl text-white mb-3">
+          <Badge variant="lime" className="mb-4">Herramienta profesional</Badge>
+          <h1 className="font-display font-bold text-4xl md:text-5xl text-limonar-charcoal mb-3">
             Calculadora Farol
           </h1>
-          <p className="text-white/60 text-lg max-w-lg mx-auto">
+          <p className="text-limonar-charcoalLight text-lg max-w-lg mx-auto">
             Ingresa las dimensiones de tu muro y obtén el estimado exacto de material, costo y tiempo de entrega.
           </p>
         </div>

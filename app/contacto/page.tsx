@@ -16,13 +16,12 @@ export default function ContactoPage() {
 
   return (
     <div className="pt-20">
-      <section className="py-16 bg-limonar-charcoal relative overflow-hidden">
-        <div className="absolute inset-0 brick-texture opacity-10" />
+      <section className="py-16 bg-white relative overflow-hidden border-b border-limonar-sandDark">
         <div className="container-limonar relative z-10 text-center">
-          <h1 className="font-display font-bold text-5xl md:text-6xl text-white mb-4">
+          <h1 className="font-display font-bold text-5xl md:text-6xl text-limonar-charcoal mb-4">
             Construyamos juntos
           </h1>
-          <p className="text-white/60 text-lg max-w-lg mx-auto">
+          <p className="text-limonar-charcoalLight text-lg max-w-lg mx-auto">
             Estamos a un mensaje de distancia. Escríbenos y nuestro equipo comercial te contactará en menos de 2 horas.
           </p>
         </div>
