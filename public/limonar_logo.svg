@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="640"
+   viewBox="0 0 640 200"
+   version="1.1"
+   id="svg29"
+   sodipodi:docname="limonar_logo.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   height="200"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title
+     id="title29">Ladrillera Limonar</title>
+  <sodipodi:namedview
+     id="namedview29"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.3014706"
+     inkscape:cx="278.91525"
+     inkscape:cy="148.67797"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg29" />
+  <defs
+     id="defs5">
+    <pattern
+       id="bricks"
+       x="0"
+       y="0"
+       width="24"
+       height="14"
+       patternUnits="userSpaceOnUse">
+      <rect
+         width="24"
+         height="14"
+         fill="#6A3010"
+         id="rect1" />
+      <rect
+         x="0.5"
+         y="0.5"
+         width="23"
+         height="5.5"
+         rx="0.5"
+         fill="#B84E22"
+         id="rect2" />
+      <rect
+         x="0.5"
+         y="0.5"
+         width="23"
+         height="1.5"
+         fill="#CC5E2E"
+         opacity="0.5"
+         id="rect3" />
+      <rect
+         x="0.5"
+         y="8"
+         width="10.5"
+         height="5.5"
+         rx="0.5"
+         fill="#A84420"
+         id="rect4" />
+      <rect
+         x="13"
+         y="8"
+         width="10.5"
+         height="5.5"
+         rx="0.5"
+         fill="#B84E22"
+         id="rect5" />
+    </pattern>
+    <clipPath
+       id="ladClip">
+      <text
+         x="340"
+         y="268"
+         font-size="28px"
+         font-weight="700"
+         font-family="'Arial Black', Arial, sans-serif"
+         text-anchor="middle"
+         letter-spacing="8"
+         id="text5">LADRILLERA</text>
+    </clipPath>
+  </defs>
+  <!-- stroke color shorthand -->
+  <!-- All letters in #1E5C04, font-size 130, baseline y=190 -->
+  <!-- Using system font but scaled down to fit: font-size 110 -->
+  <!-- LIMONAR — centered, font-size 110 -->
+  <!-- L -->
+  <!-- I -->
+  <!-- M -->
+  <!-- O = LIME SLICE  cx=295 cy=130 r=58 -->
+  <!-- N -->
+  <!-- A -->
+  <!-- R -->
+  <!-- separator -->
+  <!-- LADRILLERA brick texture -->
+  <g
+     id="g30"
+     transform="translate(0,5.175)">
+    <g
+       id="g29"
+       transform="translate(-0.94335937,-72.75)">
+      <text
+         x="20"
+         y="190"
+         font-family="'Arial Black', Impact, Arial, sans-serif"
+         font-size="110px"
+         font-weight="900"
+         fill="#1e5c04"
+         id="text6">L</text>
+      <text
+         x="95"
+         y="190"
+         font-family="'Arial Black', Impact, Arial, sans-serif"
+         font-size="110px"
+         font-weight="900"
+         fill="#1e5c04"
+         id="text7">I</text>
+      <text
+         x="130"
+         y="190"
+         font-family="'Arial Black', Impact, Arial, sans-serif"
+         font-size="110px"
+         font-weight="900"
+         fill="#1e5c04"
+         id="text8">M</text>
+      <circle
+         cx="295"
+         cy="152"
+         r="58"
+         fill="#2e7a08"
+         id="circle8" />
+      <circle
+         cx="295"
+         cy="152"
+         r="51"
+         fill="#e8f8c0"
+         id="circle9" />
+      <circle
+         cx="295"
+         cy="152"
+         r="46"
+         fill="#a8d820"
+         id="circle10" />
+      <line
+         x1="295"
+         y1="152"
+         x2="295"
+         y2="106"
+         stroke="#2e6a08"
+         stroke-width="1.5"
+         id="line10" />
+      <line
+         x1="295"
+         y1="152"
+         x2="328"
+         y2="119"
+         stroke="#2e6a08"
+         stroke-width="1.5"
+         id="line11" />
+      <line
+         x1="295"
+         y1="152"
+         x2="341"
+         y2="152"
+         stroke="#2e6a08"
+         stroke-width="1.5"
+         id="line12" />
+      <line
+         x1="295"
+         y1="152"
+         x2="328"
+         y2="185"
+         stroke="#2e6a08"
+         stroke-width="1.5"
+         id="line13" />
+      <line
+         x1="295"
+         y1="152"
+         x2="295"
+         y2="198"
+         stroke="#2e6a08"
+         stroke-width="1.5"
+         id="line14" />
+      <line
+         x1="295"
+         y1="152"
+         x2="262"
+         y2="185"
+         stroke="#2e6a08"
+         stroke-width="1.5"
+         id="line15" />
+      <line
+         x1="295"
+         y1="152"
+         x2="249"
+         y2="152"
+         stroke="#2e6a08"
+         stroke-width="1.5"
+         id="line16" />
+      <line
+         x1="295"
+         y1="152"
+         x2="262"
+         y2="119"
+         stroke="#2e6a08"
+         stroke-width="1.5"
+         id="line17" />
+      <path
+         d="m 295,152 v -46 a 46,46 0 0 1 33,13 z"
+         fill="#b8e030"
+         opacity="0.6"
+         id="path17" />
+      <path
+         d="m 295,152 33,-33 a 46,46 0 0 1 13,33 z"
+         fill="#98c820"
+         opacity="0.6"
+         id="path18" />
+      <path
+         d="m 295,152 h 46 a 46,46 0 0 1 -13,33 z"
+         fill="#b8e030"
+         opacity="0.6"
+         id="path19" />
+      <path
+         d="m 295,152 33,33 a 46,46 0 0 1 -33,13 z"
+         fill="#98c820"
+         opacity="0.6"
+         id="path20" />
+      <path
+         d="m 295,152 v 46 a 46,46 0 0 1 -33,-13 z"
+         fill="#b8e030"
+         opacity="0.6"
+         id="path21" />
+      <path
+         d="m 295,152 -33,33 a 46,46 0 0 1 -13,-33 z"
+         fill="#98c820"
+         opacity="0.6"
+         id="path22" />
+      <path
+         d="m 295,152 h -46 a 46,46 0 0 1 13,-33 z"
+         fill="#b8e030"
+         opacity="0.6"
+         id="path23" />
+      <path
+         d="m 295,152 -33,-33 a 46,46 0 0 1 33,-13 z"
+         fill="#98c820"
+         opacity="0.6"
+         id="path24" />
+      <circle
+         cx="295"
+         cy="152"
+         r="11"
+         fill="#7dc52a"
+         id="circle24" />
+      <circle
+         cx="295"
+         cy="152"
+         r="5.5"
+         fill="#5aaa10"
+         id="circle25" />
+      <ellipse
+         cx="312"
+         cy="130"
+         rx="3"
+         ry="4.5"
+         fill="#d8f860"
+         opacity="0.7"
+         id="ellipse25" />
+      <ellipse
+         cx="276"
+         cy="174"
+         rx="2.5"
+         ry="4"
+         fill="#d8f860"
+         opacity="0.65"
+         id="ellipse26" />
+      <circle
+         cx="295"
+         cy="152"
+         r="58"
+         fill="none"
+         stroke="#1e5c04"
+         stroke-width="2.5"
+         id="circle26" />
+      <text
+         x="358"
+         y="190"
+         font-family="'Arial Black', Impact, Arial, sans-serif"
+         font-size="110px"
+         font-weight="900"
+         fill="#1e5c04"
+         id="text26">N</text>
+      <text
+         x="446"
+         y="190"
+         font-family="'Arial Black', Impact, Arial, sans-serif"
+         font-size="110px"
+         font-weight="900"
+         fill="#1e5c04"
+         id="text27">A</text>
+      <text
+         x="528"
+         y="190"
+         font-family="'Arial Black', Impact, Arial, sans-serif"
+         font-size="110px"
+         font-weight="900"
+         fill="#1e5c04"
+         id="text28">R</text>
+      <line
+         x1="100"
+         y1="215"
+         x2="580"
+         y2="215"
+         stroke="#8a3a10"
+         stroke-width="0.8"
+         opacity="0.4"
+         id="line28" />
+    </g>
+    <rect
+       x="0"
+       y="238"
+       width="680"
+       height="38"
+       fill="url(#bricks)"
+       clip-path="url(#ladClip)"
+       id="rect28"
+       transform="translate(-21.05957,-98.75)" />
+    <text
+       x="318.94043"
+       y="169.25"
+       font-size="28px"
+       font-weight="700"
+       font-family="'Arial Black', Arial, sans-serif"
+       fill="none"
+       stroke="#3a1208"
+       stroke-width="0.8"
+       text-anchor="middle"
+       letter-spacing="8"
+       id="text29">LADRILLERA</text>
+  </g>
+  <metadata
+     id="metadata29">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Ladrillera Limonar</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

@@ -4,14 +4,14 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 font-semibold rounded-lg transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none active:scale-95",
+  "inline-flex items-center justify-center gap-2 font-semibold rounded-full transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none active:scale-95",
   {
     variants: {
       variant: {
-        primary: "bg-limonar-terracotta text-white hover:bg-limonar-terracottaDark shadow-warm focus-visible:ring-limonar-terracotta",
-        lime: "bg-limonar-lime text-white hover:bg-limonar-limeDark shadow-warm focus-visible:ring-limonar-lime",
-        outline: "border-2 border-limonar-terracotta text-limonar-terracotta hover:bg-limonar-terracotta hover:text-white focus-visible:ring-limonar-terracotta",
-        "outline-lime": "border-2 border-limonar-lime text-limonar-lime hover:bg-limonar-lime hover:text-white focus-visible:ring-limonar-lime",
+        primary: "bg-limonar-lime text-limonar-charcoal hover:bg-limonar-limeDark hover:text-white focus-visible:ring-limonar-lime",
+        lime: "bg-limonar-lime text-limonar-charcoal hover:bg-limonar-limeDark hover:text-white focus-visible:ring-limonar-lime",
+        outline: "border-2 border-limonar-charcoal text-limonar-charcoal hover:bg-limonar-charcoal hover:text-white focus-visible:ring-limonar-charcoal",
+        "outline-lime": "border-2 border-limonar-lime text-limonar-charcoal hover:bg-limonar-lime focus-visible:ring-limonar-lime",
         ghost: "text-limonar-charcoal hover:bg-limonar-sand focus-visible:ring-limonar-mortar",
         "ghost-white": "text-white hover:bg-white/10 focus-visible:ring-white",
         dark: "bg-limonar-charcoal text-white hover:bg-limonar-charcoalLight focus-visible:ring-limonar-charcoal",

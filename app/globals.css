@@ -13,12 +13,12 @@
   }
 
   body {
-    @apply bg-limonar-cream text-limonar-charcoal antialiased;
+    @apply bg-white text-limonar-charcoal antialiased;
     font-feature-settings: "kern" 1, "liga" 1;
   }
 
   ::selection {
-    @apply bg-limonar-lime/30 text-limonar-charcoal;
+    @apply bg-limonar-lime text-white;
   }
 
   ::-webkit-scrollbar {
@@ -69,21 +69,21 @@
   }
 
   .brick-texture {
-    background-color: #0A0A0A;
+    background-color: #000000;
     background-image:
       repeating-linear-gradient(
         90deg,
         transparent,
         transparent 9.5px,
-        rgba(0,0,0,0.15) 9.5px,
-        rgba(0,0,0,0.15) 10px
+        rgba(255,255,255,0.04) 9.5px,
+        rgba(255,255,255,0.04) 10px
       ),
       repeating-linear-gradient(
         0deg,
         transparent,
         transparent 19px,
-        rgba(0,0,0,0.1) 19px,
-        rgba(0,0,0,0.1) 20px
+        rgba(255,255,255,0.03) 19px,
+        rgba(255,255,255,0.03) 20px
       );
   }
 
@@ -115,7 +115,7 @@
   }
 
   .farol-glow {
-    filter: drop-shadow(0 0 16px rgba(0,222,0,0.6));
+    filter: drop-shadow(0 0 16px rgba(0,204,0,0.6));
   }
 }
 
