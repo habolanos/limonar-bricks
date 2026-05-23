@@ -25,7 +25,7 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-limonar-charcoal text-white">
+    <footer className="bg-white text-limonar-charcoal border-t border-limonar-sandDark">
       <div className="container-limonar py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand */}
@@ -36,35 +36,35 @@ export function Footer() {
                 <Flame className="absolute h-4 w-4 text-limonar-gold animate-farol-glow" />
               </div>
               <div>
-                <span className="font-display font-bold text-xl text-white tracking-tight leading-none block">Limonar</span>
-                <span className="text-[10px] text-limonar-sand/60 uppercase tracking-widest leading-none block">Ladrillera</span>
+                <span className="font-display font-bold text-xl text-limonar-charcoal tracking-tight leading-none block">Limonar</span>
+                <span className="text-[10px] text-limonar-charcoalLight uppercase tracking-widest leading-none block">Ladrillera</span>
               </div>
             </Link>
-            <p className="text-white/60 text-sm leading-relaxed mb-6 max-w-xs">
+            <p className="text-limonar-charcoalLight text-sm leading-relaxed mb-6 max-w-xs">
               Fabricamos el material. Tú construyes la historia.
               <br />Valle del Cauca, Colombia — desde el corazón de la tierra.
             </p>
-            <div className="space-y-2 text-sm text-white/60">
+            <div className="space-y-2 text-sm text-limonar-charcoalLight">
               <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-limonar-terracotta flex-shrink-0" />
+                <MapPin className="h-4 w-4 text-limonar-lime flex-shrink-0" />
                 <span>Km 4 Vía Palmira–Cali, Valle del Cauca</span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-limonar-terracotta flex-shrink-0" />
+                <Phone className="h-4 w-4 text-limonar-lime flex-shrink-0" />
                 <span>+57 300 123 4567</span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-limonar-terracotta flex-shrink-0" />
+                <Mail className="h-4 w-4 text-limonar-lime flex-shrink-0" />
                 <span>hola@limonar.co</span>
               </div>
             </div>
             <div className="flex items-center gap-3 mt-5">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-                className="p-2 rounded-full bg-white/5 hover:bg-limonar-terracotta/20 transition-colors">
+                className="p-2 rounded-full bg-limonar-sandLight hover:bg-limonar-lime/20 transition-colors">
                 <Instagram className="h-4 w-4" />
               </a>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
-                className="p-2 rounded-full bg-white/5 hover:bg-limonar-terracotta/20 transition-colors">
+                className="p-2 rounded-full bg-limonar-sandLight hover:bg-limonar-lime/20 transition-colors">
                 <Facebook className="h-4 w-4" />
               </a>
             </div>
@@ -72,11 +72,11 @@ export function Footer() {
 
           {/* Productos */}
           <div>
-            <h4 className="text-sm font-semibold text-white/40 uppercase tracking-wider mb-4">Productos</h4>
+            <h4 className="text-sm font-semibold text-limonar-charcoalLight uppercase tracking-wider mb-4">Productos</h4>
             <ul className="space-y-2.5">
               {footerLinks.productos.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-sm text-white/70 hover:text-limonar-terracottaLight transition-colors">{l.label}</Link>
+                  <Link href={l.href} className="text-sm text-limonar-charcoalLight hover:text-limonar-lime transition-colors">{l.label}</Link>
                 </li>
               ))}
             </ul>
@@ -84,11 +84,11 @@ export function Footer() {
 
           {/* Herramientas */}
           <div>
-            <h4 className="text-sm font-semibold text-white/40 uppercase tracking-wider mb-4">Herramientas</h4>
+            <h4 className="text-sm font-semibold text-limonar-charcoalLight uppercase tracking-wider mb-4">Herramientas</h4>
             <ul className="space-y-2.5">
               {footerLinks.herramientas.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-sm text-white/70 hover:text-limonar-terracottaLight transition-colors">{l.label}</Link>
+                  <Link href={l.href} className="text-sm text-limonar-charcoalLight hover:text-limonar-lime transition-colors">{l.label}</Link>
                 </li>
               ))}
             </ul>
@@ -96,11 +96,11 @@ export function Footer() {
 
           {/* Empresa */}
           <div>
-            <h4 className="text-sm font-semibold text-white/40 uppercase tracking-wider mb-4">Empresa</h4>
+            <h4 className="text-sm font-semibold text-limonar-charcoalLight uppercase tracking-wider mb-4">Empresa</h4>
             <ul className="space-y-2.5">
               {footerLinks.empresa.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-sm text-white/70 hover:text-limonar-terracottaLight transition-colors">{l.label}</Link>
+                  <Link href={l.href} className="text-sm text-limonar-charcoalLight hover:text-limonar-lime transition-colors">{l.label}</Link>
                 </li>
               ))}
             </ul>
@@ -108,11 +108,11 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-white/40">
+        <div className="mt-12 pt-6 border-t border-limonar-sandDark flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-limonar-charcoalLight">
             © 2025 Ladrillera Limonar S.A.S. — Todos los derechos reservados.
           </p>
-          <p className="text-sm text-white/30 font-display italic">
+          <p className="text-sm text-limonar-mortar font-display italic">
             "Hecho en Colombia. Construido para durar más que nosotros."
           </p>
         </div>

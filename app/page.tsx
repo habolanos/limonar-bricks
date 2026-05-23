@@ -294,7 +294,7 @@ function TrustSection() {
 
 function CTASection() {
   return (
-    <section className="py-24 bg-limonar-lime relative overflow-hidden">
+    <section className="py-24 bg-white relative overflow-hidden">
       <div className="container-limonar relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -304,13 +304,13 @@ function CTASection() {
         >
           <h2 className="font-display font-bold text-4xl md:text-6xl text-limonar-charcoal mb-6 leading-tight">
             Tú no compras ladrillos.<br />
-            <span className="text-limonar-terracotta">Tú construyes legados.</span>
+            <span className="text-limonar-lime">Tú construyes legados.</span>
           </h2>
-          <p className="text-limonar-charcoal/70 text-xl mb-10 max-w-xl mx-auto">
+          <p className="text-limonar-charcoalLight text-xl mb-10 max-w-xl mx-auto">
             Únete a miles de maestros y familias colombianas que ya confían en Limonar para edificar su futuro.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="dark" size="xl" asChild>
+            <Button variant="primary" size="xl" asChild>
               <Link href="/calculadora">
                 <ArrowRight className="h-5 w-5" />
                 Calcular mi obra ahora
