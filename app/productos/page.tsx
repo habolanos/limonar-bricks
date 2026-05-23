@@ -12,15 +12,14 @@ export default function ProductosPage() {
   return (
     <div className="pt-20">
       {/* Header */}
-      <section className="py-20 bg-limonar-charcoal relative overflow-hidden">
-        <div className="absolute inset-0 brick-texture opacity-10" />
+      <section className="py-20 bg-white relative overflow-hidden border-b border-limonar-sandDark">
         <div className="container-limonar relative z-10 text-center">
-          <Badge variant="terracotta" className="mb-4">Catálogo de productos</Badge>
-          <h1 className="font-display font-bold text-5xl md:text-6xl text-white mb-4">
+          <Badge variant="lime" className="mb-4">Catálogo de productos</Badge>
+          <h1 className="font-display font-bold text-5xl md:text-6xl text-limonar-charcoal mb-4">
             Fabricados con criterio,<br />
-            <span className="text-limonar-terracottaLight">no en serie.</span>
+            <span className="text-limonar-lime">no en serie.</span>
           </h1>
-          <p className="text-white/60 text-lg max-w-xl mx-auto">
+          <p className="text-limonar-charcoalLight text-lg max-w-xl mx-auto">
             Cada referencia en nuestro catálogo es el resultado de décadas de perfeccionamiento artesanal e innovación constante.
           </p>
         </div>

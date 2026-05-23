@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Flame, MapPin, Phone, Mail, Instagram, Facebook } from "lucide-react";
+import Image from "next/image";
+import { MapPin, Phone, Mail, Instagram, Facebook } from "lucide-react";
 import { companyInfo } from "@/lib/limonar-data";
 
 const footerLinks = {
@@ -31,15 +32,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-4 group">
-              <div className="relative w-8 h-8 flex items-center justify-center">
-                <div className="w-8 h-8 bg-limonar-terracotta rounded-sm rotate-12 group-hover:rotate-0 transition-transform duration-300" />
-                <Flame className="absolute h-4 w-4 text-limonar-gold animate-farol-glow" />
-              </div>
-              <div>
-                <span className="font-display font-bold text-xl text-limonar-charcoal tracking-tight leading-none block">Limonar</span>
-                <span className="text-[10px] text-limonar-charcoalLight uppercase tracking-widest leading-none block">Ladrillera</span>
-              </div>
+            <Link href="/" className="flex items-center mb-4 group">
+              <Image
+                src="/limonar_logo.svg"
+                alt="Limonar Ladrillera"
+                width={140}
+                height={40}
+                className="h-10 w-auto transition-opacity group-hover:opacity-80"
+              />
             </Link>
             <p className="text-limonar-charcoalLight text-sm leading-relaxed mb-6 max-w-xs">
               {companyInfo.tagline}
