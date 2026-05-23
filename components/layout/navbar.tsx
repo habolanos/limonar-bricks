@@ -11,6 +11,7 @@ const navLinks = [
   { label: "Productos", href: "/productos" },
   { label: "Calculadora", href: "/calculadora" },
   { label: "Maestros", href: "/maestros" },
+  { label: "Transportadores", href: "/transportadores" },
   { label: "Partners", href: "/partners" },
   { label: "Nosotros", href: "/nosotros" },
   { label: "Contacto", href: "/contacto" },

@@ -59,6 +59,16 @@ export interface EmbajadorLevel {
   color: string;
 }
 
+export interface TransportadorLevel {
+  level: number;
+  name: string;
+  minPoints: number;
+  maxPoints: number | null;
+  benefits: string[];
+  badge: string;
+  color: string;
+}
+
 export interface PartnerType {
   id: string;
   name: string;
@@ -254,6 +264,70 @@ export const embajadorLevels: EmbajadorLevel[] = [
   { level: 2, name: "Brote", minPoints: 1000, maxPoints: 4999, badge: "🌿", color: "#7CB518", benefits: ["7% descuento recurrente", "Envío gratis > $500k COP"] },
   { level: 3, name: "Árbol", minPoints: 5000, maxPoints: 14999, badge: "🌳", color: "#5E8A12", benefits: ["12% descuento", "Acceso a ediciones especiales", "Invitación a eventos"] },
   { level: 4, name: "Limonar Pleno", minPoints: 15000, maxPoints: null, badge: "🍋", color: "#D4A017", benefits: ["18% descuento VIP", "Atención prioritaria 24/7", "Regalo anual Limonar", "Certificado Embajador"] },
+];
+
+// ── Transportador Levels ──────────────────────────────────────────────────────
+
+export const transportadorLevels: TransportadorLevel[] = [
+  {
+    level: 1,
+    name: "Conductor",
+    minPoints: 0,
+    maxPoints: 999,
+    badge: "🚚",
+    color: "#6B7280",
+    benefits: [
+      "1 punto por tonelada transportada",
+      "Acceso a zona de carga prioritaria",
+      "Café y refrigerio gratis en planta",
+      "Descuento 5% en lubricantes (alianza)",
+    ],
+  },
+  {
+    level: 2,
+    name: "Fletero",
+    minPoints: 1000,
+    maxPoints: 4999,
+    badge: "🚛",
+    color: "#F59E0B",
+    benefits: [
+      "Bono combustible 3% del valor transportado",
+      "Descuento 10% en mantenimiento (taller aliado)",
+      "Seguro de carga básico incluido",
+      "Prioridad en asignación de rutas",
+    ],
+  },
+  {
+    level: 3,
+    name: "Socio Logístico",
+    minPoints: 5000,
+    maxPoints: 14999,
+    badge: "🚜",
+    color: "#00CC00",
+    benefits: [
+      "Bono combustible 5% del valor transportado",
+      "Crédito para llantas y repuestos",
+      "Rutas exclusivas con mejor tarifa",
+      "Prioridad en temporada alta",
+      "Seguro full para vehículo",
+    ],
+  },
+  {
+    level: 4,
+    name: "Aliado Estratégico",
+    minPoints: 15000,
+    maxPoints: null,
+    badge: "🏆",
+    color: "#0D0D0D",
+    benefits: [
+      "Bono combustible 8% del valor transportado",
+      "Contrato mensual garantizado",
+      "Seguro full + responsabilidad civil",
+      "Reconocimiento en eventos Limonar",
+      "Acceso a flota de respaldo en emergencias",
+      "Capacitación en logística sostenible",
+    ],
+  },
 ];
 
 // ── Partner Types ─────────────────────────────────────────────────────────────

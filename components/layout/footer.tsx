@@ -13,6 +13,7 @@ const footerLinks = {
   herramientas: [
     { label: "Calculadora de Ladrillos", href: "/calculadora" },
     { label: "Maestros Limonar", href: "/maestros" },
+    { label: "Transportadores Limonar", href: "/transportadores" },
     { label: "Embajadores", href: "/embajadores" },
     { label: "Portal Partners", href: "/partners" },
   ],
