@@ -10,24 +10,23 @@ export default function NosotrosPage() {
   return (
     <div className="pt-20">
       {/* Hero */}
-      <section className="min-h-[70vh] flex items-center bg-hero-gradient relative overflow-hidden">
-        <div className="absolute inset-0 brick-texture opacity-10" />
+      <section className="min-h-[70vh] flex items-center bg-white relative overflow-hidden border-b border-limonar-sandDark">
         <div className="container-limonar relative z-10 py-20">
           <div className="max-w-3xl">
             <motion.p
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-              className="text-limonar-terracottaLight text-sm font-semibold uppercase tracking-widest mb-4">
+              className="text-limonar-lime text-sm font-semibold uppercase tracking-widest mb-4">
               Nuestra historia
             </motion.p>
             <motion.h1
               initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-              className="font-display font-bold text-5xl md:text-7xl text-white leading-tight mb-6">
+              className="font-display font-bold text-5xl md:text-7xl text-limonar-charcoal leading-tight mb-6">
               No somos una fábrica.<br />
-              <span className="text-limonar-terracottaLight">Somos una familia.</span>
+              <span className="text-limonar-lime">Somos una familia.</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-              className="text-white/70 text-xl leading-relaxed max-w-xl">
+              className="text-limonar-charcoalLight text-xl leading-relaxed max-w-xl">
               Que aprendió que la tierra bien trabajada sostiene sueños. Desde el Valle del Cauca, fabricamos cada ladrillo como si fuera el último que necesitas.
             </motion.p>
           </div>
