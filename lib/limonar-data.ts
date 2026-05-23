@@ -1,3 +1,30 @@
+// ========================================
+// COMPANY CONTACT INFORMATION
+// ========================================
+export const companyInfo = {
+  name: "Ladrillera Limonar",
+  tagline: "Fabricamos el material. Tú construyes la historia.",
+  location: {
+    city: "Villa Rica",
+    region: "Cauca",
+    country: "Colombia",
+    fullAddress: "Km 6 Vía Puerto Tejada-Villa Rica, Cauca",
+    badge: "Villa Rica, Cauca · Colombia · Desde la tierra",
+  },
+  contact: {
+    phone: "+57 315 170 0698",
+    email: "hola@limonar.co",
+    whatsapp: "573151700698",
+  },
+  social: {
+    instagram: "https://instagram.com",
+    facebook: "https://facebook.com",
+  },
+};
+
+// ========================================
+// PRODUCT INTERFACES & DATA
+// ========================================
 export interface BrickProduct {
   id: string;
   name: string;

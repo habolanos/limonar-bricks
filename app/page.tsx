@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Star, MessageCircle, Shield, Leaf, Award, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BrickCalculator } from "@/components/calculadora/BrickCalculator";
-import { manifesto, companyStats, storyChapters } from "@/lib/limonar-data";
+import { manifesto, companyStats, storyChapters, companyInfo } from "@/lib/limonar-data";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -60,7 +60,7 @@ function HeroSection() {
         <motion.div variants={fadeUp} custom={0} initial="hidden" animate="visible"
           className="inline-flex items-center gap-2 bg-limonar-lime/10 border border-limonar-lime/40 rounded-full px-5 py-2 mb-8">
           <span className="w-2 h-2 rounded-full bg-limonar-lime animate-pulse-warm" />
-          <span className="text-limonar-limeDark text-sm font-medium">Valle del Cauca · Colombia · Desde la tierra</span>
+          <span className="text-limonar-limeDark text-sm font-medium">{companyInfo.location.badge}</span>
         </motion.div>
 
         <motion.h1 variants={fadeUp} custom={1} initial="hidden" animate="visible"

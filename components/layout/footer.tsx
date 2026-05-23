@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Flame, MapPin, Phone, Mail, Instagram, Facebook } from "lucide-react";
+import { companyInfo } from "@/lib/limonar-data";
 
 const footerLinks = {
   productos: [
@@ -41,29 +42,29 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-limonar-charcoalLight text-sm leading-relaxed mb-6 max-w-xs">
-              Fabricamos el material. Tú construyes la historia.
-              <br />Valle del Cauca, Colombia — desde el corazón de la tierra.
+              {companyInfo.tagline}
+              <br />{companyInfo.location.region}, {companyInfo.location.country} — desde el corazón de la tierra.
             </p>
             <div className="space-y-2 text-sm text-limonar-charcoalLight">
               <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-limonar-lime flex-shrink-0" />
-                <span>Km 4 Vía Palmira–Cali, Valle del Cauca</span>
+                <span>{companyInfo.location.fullAddress}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-limonar-lime flex-shrink-0" />
-                <span>+57 300 123 4567</span>
+                <span>{companyInfo.contact.phone}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-limonar-lime flex-shrink-0" />
-                <span>hola@limonar.co</span>
+                <span>{companyInfo.contact.email}</span>
               </div>
             </div>
             <div className="flex items-center gap-3 mt-5">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+              <a href={companyInfo.social.instagram} target="_blank" rel="noopener noreferrer"
                 className="p-2 rounded-full bg-limonar-sandLight hover:bg-limonar-lime/20 transition-colors">
                 <Instagram className="h-4 w-4" />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+              <a href={companyInfo.social.facebook} target="_blank" rel="noopener noreferrer"
                 className="p-2 rounded-full bg-limonar-sandLight hover:bg-limonar-lime/20 transition-colors">
                 <Facebook className="h-4 w-4" />
               </a>
