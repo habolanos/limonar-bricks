@@ -98,10 +98,21 @@ export default function ContactoPage() {
                         className="w-full px-4 py-3 rounded-xl border border-limonar-sand focus:border-limonar-terracotta focus:outline-none text-sm transition-colors resize-none"
                       />
                     </div>
-                    <Button type="submit" variant="primary" size="lg" className="w-full">
-                      <Send className="h-5 w-5" />
-                      Enviar mensaje
-                    </Button>
+                    <div className="relative">
+                      <Button 
+                        type="button" 
+                        variant="primary" 
+                        size="lg" 
+                        className="w-full opacity-50 cursor-not-allowed"
+                        disabled
+                      >
+                        <Send className="h-5 w-5" />
+                        Enviar mensaje
+                      </Button>
+                      <p className="text-xs text-limonar-mortar text-center mt-2">
+                        Formulario en desarrollo. Por favor usa WhatsApp para contactarnos.
+                      </p>
+                    </div>
                   </form>
                 </>
               )}
