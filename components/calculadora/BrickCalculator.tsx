@@ -246,6 +246,47 @@ export function BrickCalculator() {
             </div>
           </div>
 
+          {/* Brick Dimensions Info */}
+          <div className="bg-limonar-lime/5 border border-limonar-lime/20 rounded-xl p-4">
+            <div className="flex items-start gap-3">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" 
+                   style={{ backgroundColor: selectedProduct.color }}>
+                <span className="text-white text-xs font-bold">📏</span>
+              </div>
+              <div className="flex-1">
+                <p className="text-xs font-semibold text-limonar-charcoal uppercase tracking-wider mb-1">
+                  Dimensiones del ladrillo
+                </p>
+                <div className="grid grid-cols-3 gap-2 mb-2">
+                  <div className="bg-white rounded-lg px-2 py-1.5 text-center">
+                    <p className="text-xs text-limonar-mortar">Largo</p>
+                    <p className="text-sm font-bold text-limonar-charcoal">{selectedProduct.dimensions.l}cm</p>
+                  </div>
+                  <div className="bg-white rounded-lg px-2 py-1.5 text-center">
+                    <p className="text-xs text-limonar-mortar">Alto</p>
+                    <p className="text-sm font-bold text-limonar-charcoal">{selectedProduct.dimensions.h}cm</p>
+                  </div>
+                  <div className="bg-white rounded-lg px-2 py-1.5 text-center">
+                    <p className="text-xs text-limonar-mortar">Ancho</p>
+                    <p className="text-sm font-bold text-limonar-charcoal">{selectedProduct.dimensions.w}cm</p>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between text-xs">
+                  <span className="text-limonar-mortar">Área visible:</span>
+                  <span className="font-bold text-limonar-lime">
+                    {selectedProduct.dimensions.l} × {selectedProduct.dimensions.h} = {(selectedProduct.dimensions.l * selectedProduct.dimensions.h)} cm²
+                  </span>
+                </div>
+                <div className="flex items-center justify-between text-xs mt-1">
+                  <span className="text-limonar-mortar">Aprox. por m²:</span>
+                  <span className="font-bold text-limonar-terracotta">
+                    ~{Math.round(result.bricksPerM2)} ladrillos
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Simple Mode Fields */}
           {mode === "simple" && (
             <>
