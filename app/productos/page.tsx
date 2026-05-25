@@ -82,7 +82,7 @@ export default function ProductosPage() {
                     </div>
                     <div className="bg-limonar-sand/40 rounded-xl p-3 text-center">
                       <Package className="h-4 w-4 text-limonar-terracotta mx-auto mb-1" />
-                      <p className="text-xs text-limonar-mortar">x Palé</p>
+                      <p className="text-xs text-limonar-mortar">x Estiba</p>
                       <p className="text-xs font-bold text-limonar-charcoal mt-0.5">{product.bricksPerPallet} und</p>
                     </div>
                   </div>

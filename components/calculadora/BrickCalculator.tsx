@@ -286,16 +286,16 @@ export function BrickCalculator() {
             />
             <ResultCard
               icon={Package}
-              label="Palés"
-              value={String(result.pallets)}
-              sub={`50 und/palé · ${selectedProduct.name}`}
+              label="Estibas"
+              value={String(result.estibas)}
+              sub={`50 und/estiba · ${selectedProduct.name}`}
               color="lime"
             />
             <ResultCard
               icon={Weight}
-              label="Peso estimado"
-              value={`${result.weightTon} ton`}
-              sub={`${formatNumber(result.weightKg)} kg en total`}
+              label="Viajes"
+              value={String(result.viajes.count)}
+              sub={`${formatNumber(result.viajes.size)} ladrillos por viaje`}
               color="gold"
             />
             <div className="bg-limonar-terracotta/5 rounded-xl p-4 border-2 border-limonar-terracotta/20">

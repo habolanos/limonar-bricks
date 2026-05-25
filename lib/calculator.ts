@@ -22,7 +22,8 @@ export interface CalculatorResult {
   bricksDouble: number;
   weightKg: number;
   weightTon: number;
-  pallets: number;
+  estibas: number;
+  viajes: { count: number; size: number };
   priceRange: { min: number; max: number };
   tierName: string;
   discount: number;
@@ -31,7 +32,8 @@ export interface CalculatorResult {
 const BRICK_W = 0.10;
 const BRICK_H = 0.20;
 const BRICK_WEIGHT_KG = 3.2;
-const BRICKS_PER_PALLET = 50;
+const BRICKS_PER_ESTIBA = 50;
+const TRIP_SIZES = [3000, 2500, 2000, 1500, 1000];
 const DOOR_W = 0.9;
 const DOOR_H = 2.1;
 const WINDOW_W = 1.2;
@@ -68,7 +70,11 @@ export function calculateBricks(inputs: CalculatorInputs): CalculatorResult {
 
   const weightKg = bricksDouble * BRICK_WEIGHT_KG;
   const weightTon = weightKg / 1000;
-  const pallets = Math.ceil(bricksDouble / BRICKS_PER_PALLET);
+  const estibas = Math.ceil(bricksDouble / BRICKS_PER_ESTIBA);
+  
+  // Calculate trips (viajes)
+  const tripSize = TRIP_SIZES.find(size => bricksDouble >= size) || TRIP_SIZES[TRIP_SIZES.length - 1];
+  const tripCount = Math.ceil(bricksDouble / tripSize);
 
   const tier = pricingTiers.find(
     (t) => bricksDouble >= t.min && bricksDouble <= t.max
@@ -88,7 +94,8 @@ export function calculateBricks(inputs: CalculatorInputs): CalculatorResult {
     bricksDouble,
     weightKg: Math.round(weightKg),
     weightTon: Math.round(weightTon * 100) / 100,
-    pallets,
+    estibas,
+    viajes: { count: tripCount, size: tripSize },
     priceRange: {
       min: Math.round(discountedPrice * 0.9),
       max: Math.round(discountedPrice * 1.1),
@@ -116,7 +123,8 @@ export function buildWhatsAppMessage(result: CalculatorResult, productName: stri
     `🧱 Producto: ${productName}\n` +
     `📐 Área neta: ${result.netArea} m²\n` +
     `🔢 Ladrillos necesarios: ${formatNumber(result.bricksDouble)}\n` +
-    `📦 Palés: ${result.pallets}\n` +
+    `📦 Estibas: ${result.estibas}\n` +
+    `🚚 Viajes: ${result.viajes.count} (${formatNumber(result.viajes.size)} und/viaje)\n` +
     `⚖️ Peso: ${result.weightTon} ton\n` +
     `💰 Estimado: ${formatCOP(result.priceRange.min)} – ${formatCOP(result.priceRange.max)}\n\n` +
     `¿Me pueden dar una cotización formal? Gracias.`
@@ -127,7 +135,7 @@ export function buildWhatsAppMessage(result: CalculatorResult, productName: stri
 export function generateShareCard(result: CalculatorResult): Record<string, string> {
   return {
     headline: `Voy a necesitar ${formatNumber(result.bricksDouble)} ladrillos Limonar para mi obra 🧱`,
-    detail: `${result.netArea} m² · ${result.pallets} palés · ${result.weightTon} ton`,
+    detail: `${result.netArea} m² · ${result.estibas} estibas · ${result.viajes.count} viajes`,
     cta: "Calcula la tuya en limonar.co",
   };
 }
