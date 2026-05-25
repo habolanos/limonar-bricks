@@ -55,8 +55,8 @@ function BrickWallPreview({ bricks, productColor, productName, brickLength, bric
                     animate={{ opacity: isFilled ? 1 : 0.15, scale: isFilled ? 1 : 0.9 }}
                     transition={{ duration: 0.2, delay: isFilled ? brickIndex * 0.008 : 0 }}
                     className={cn(
-                      "rounded-sm border",
-                      isFilled ? "shadow-sm" : "border-limonar-sandDark/30"
+                      "rounded-sm border relative overflow-hidden",
+                      isFilled ? "shadow-md" : "border-limonar-sandDark/30"
                     )}
                     style={{
                       flex: 1,
@@ -64,11 +64,42 @@ function BrickWallPreview({ bricks, productColor, productName, brickLength, bric
                       aspectRatio: aspectRatio,
                       backgroundColor: isFilled ? productColor : '#E8DED1',
                       backgroundImage: isFilled 
-                        ? `linear-gradient(135deg, ${productColor} 0%, ${productColor}dd 100%)`
+                        ? `
+                          linear-gradient(to bottom, ${productColor}22 0%, transparent 30%, transparent 70%, ${productColor}44 100%),
+                          linear-gradient(135deg, ${productColor} 0%, ${productColor}dd 50%, ${productColor}bb 100%),
+                          repeating-linear-gradient(90deg, transparent, transparent 2px, ${productColor}11 2px, ${productColor}11 4px)
+                        `
                         : undefined,
-                      borderColor: isFilled ? `${productColor}88` : undefined,
+                      borderColor: isFilled ? `${productColor}cc` : undefined,
+                      borderWidth: isFilled ? '1.5px' : '1px',
+                      boxShadow: isFilled 
+                        ? `inset 0 1px 0 ${productColor}33, inset 0 -1px 2px ${productColor}66, 0 1px 3px rgba(0,0,0,0.2)`
+                        : undefined,
                     }}
-                  />
+                  >
+                    {isFilled && (
+                      <>
+                        {/* Texture overlay */}
+                        <div 
+                          className="absolute inset-0 opacity-20"
+                          style={{
+                            backgroundImage: `
+                              radial-gradient(circle at 20% 30%, ${productColor}44 0%, transparent 50%),
+                              radial-gradient(circle at 80% 70%, ${productColor}22 0%, transparent 50%),
+                              radial-gradient(circle at 50% 50%, transparent 40%, ${productColor}11 100%)
+                            `,
+                          }}
+                        />
+                        {/* Highlight */}
+                        <div 
+                          className="absolute top-0 left-0 right-0 h-1/3 opacity-30"
+                          style={{
+                            background: `linear-gradient(to bottom, white, transparent)`,
+                          }}
+                        />
+                      </>
+                    )}
+                  </motion.div>
                 );
               })}
             </div>
