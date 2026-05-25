@@ -106,12 +106,18 @@ export function BrickCalculator() {
     wallLength, wallHeight, thickness, doors, windows,
     mortarJoint, wasteFactor, productId,
     pricePerUnit: selectedProduct.pricePerUnit.min,
+    brickWidth: selectedProduct.dimensions.w,
+    brickHeight: selectedProduct.dimensions.h,
+    brickWeight: selectedProduct.weightKg,
   }), [wallLength, wallHeight, thickness, doors, windows, mortarJoint, wasteFactor, productId, selectedProduct]);
 
   const projectInputs: ProjectInputs = useMemo(() => ({
     perimeter, wallHeight: projectHeight, rooms, bathrooms, kitchen, livingRoom,
     thickness, mortarJoint, wasteFactor, productId,
     pricePerUnit: selectedProduct.pricePerUnit.min,
+    brickWidth: selectedProduct.dimensions.w,
+    brickHeight: selectedProduct.dimensions.h,
+    brickWeight: selectedProduct.weightKg,
   }), [perimeter, projectHeight, rooms, bathrooms, kitchen, livingRoom, thickness, mortarJoint, wasteFactor, productId, selectedProduct]);
 
   const result = useMemo(() => 

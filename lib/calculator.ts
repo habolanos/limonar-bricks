@@ -10,6 +10,9 @@ export interface CalculatorInputs {
   wasteFactor: number;
   productId: string;
   pricePerUnit: number;
+  brickWidth: number;
+  brickHeight: number;
+  brickWeight: number;
 }
 
 export interface ProjectInputs {
@@ -24,6 +27,9 @@ export interface ProjectInputs {
   wasteFactor: number;
   productId: string;
   pricePerUnit: number;
+  brickWidth: number;
+  brickHeight: number;
+  brickWeight: number;
 }
 
 export interface CalculatorResult {
@@ -43,9 +49,6 @@ export interface CalculatorResult {
   discount: number;
 }
 
-const BRICK_W = 0.10;
-const BRICK_H = 0.20;
-const BRICK_WEIGHT_KG = 3.2;
 const BRICKS_PER_ESTIVA = 50;
 const TRIP_SIZES = [3000, 2500, 2000, 1500, 1000];
 const DOOR_W = 0.9;
@@ -53,8 +56,8 @@ const DOOR_H = 2.1;
 const WINDOW_W = 1.2;
 const WINDOW_H = 1.2;
 
-export function calcBricksPerM2(mortarJointM: number): number {
-  return 1 / ((BRICK_W + mortarJointM) * (BRICK_H + mortarJointM));
+export function calcBricksPerM2(brickWidthM: number, brickHeightM: number, mortarJointM: number): number {
+  return 1 / ((brickWidthM + mortarJointM) * (brickHeightM + mortarJointM));
 }
 
 export function calculateProject(inputs: ProjectInputs): CalculatorResult {
@@ -101,6 +104,9 @@ export function calculateProject(inputs: ProjectInputs): CalculatorResult {
     wasteFactor,
     productId: inputs.productId,
     pricePerUnit,
+    brickWidth: inputs.brickWidth,
+    brickHeight: inputs.brickHeight,
+    brickWeight: inputs.brickWeight,
   });
 }
 
@@ -114,6 +120,9 @@ export function calculateBricks(inputs: CalculatorInputs): CalculatorResult {
     mortarJoint,
     wasteFactor,
     pricePerUnit,
+    brickWidth,
+    brickHeight,
+    brickWeight,
   } = inputs;
 
   const mortarJointM = mortarJoint / 100;
@@ -123,13 +132,17 @@ export function calculateBricks(inputs: CalculatorInputs): CalculatorResult {
   const openingsArea = doorsArea + windowsArea;
   const netArea = Math.max(0, grossArea - openingsArea);
 
-  const bricksPerM2 = calcBricksPerM2(mortarJointM);
+  // Convert brick dimensions from cm to meters
+  const brickWidthM = brickWidth / 100;
+  const brickHeightM = brickHeight / 100;
+  
+  const bricksPerM2 = calcBricksPerM2(brickWidthM, brickHeightM, mortarJointM);
   const bricksNet = Math.ceil(netArea * bricksPerM2);
   const wasteMultiplier = 1 + wasteFactor / 100;
   const bricksWithWaste = Math.ceil(bricksNet * wasteMultiplier);
   const bricksDouble = thickness === "double" ? bricksWithWaste * 2 : bricksWithWaste;
 
-  const weightKg = bricksDouble * BRICK_WEIGHT_KG;
+  const weightKg = bricksDouble * brickWeight;
   const weightTon = weightKg / 1000;
   const estivas = Math.ceil(bricksDouble / BRICKS_PER_ESTIVA);
   
