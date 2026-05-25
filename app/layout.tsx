@@ -11,14 +11,7 @@ export const metadata: Metadata = {
   title: "Ladrillera Limonar — Fabricamos el material. Tú construyes la historia.",
   description: "Ladrillos artesanales de máxima calidad del Valle del Cauca. Calculadora online, programa Maestros Limonar y portal de partners. Construye tu sueño con Limonar.",
   keywords: "ladrillera, ladrillos, construcción, Colombia, Valle del Cauca, Ladrillo Farol, maestros constructores",
-  icons: { 
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/icon.svg", type: "image/svg+xml", sizes: "any" }
-    ],
-    shortcut: "/favicon.svg",
-    apple: "/icon.svg"
-  },
+  icons: { icon: "/icon.svg", shortcut: "/icon.svg" },
   openGraph: {
     title: "Ladrillera Limonar",
     description: "Cada ladrillo tiene el nombre de quien lo soñó.",
