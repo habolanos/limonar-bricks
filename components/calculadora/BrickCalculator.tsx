@@ -19,13 +19,13 @@ interface BrickWallPreviewProps {
   bricks: number;
   productColor: string;
   productName: string;
-  brickWidth: number;
+  brickLength: number;
   brickHeight: number;
 }
 
-function BrickWallPreview({ bricks, productColor, productName, brickWidth, brickHeight }: BrickWallPreviewProps) {
-  // Calculate aspect ratio for realistic brick display
-  const aspectRatio = brickWidth / brickHeight;
+function BrickWallPreview({ bricks, productColor, productName, brickLength, brickHeight }: BrickWallPreviewProps) {
+  // Calculate aspect ratio for realistic brick display (length × height visible on wall)
+  const aspectRatio = brickLength / brickHeight;
   const bricksPerRow = Math.ceil(8 / (aspectRatio / 2)); // Adjust columns based on aspect ratio
   const maxBricks = bricksPerRow * BRICK_WALL_ROWS;
   const filled = Math.min(Math.round((bricks / 200) * maxBricks), maxBricks);
@@ -493,7 +493,7 @@ export function BrickCalculator() {
             bricks={result.bricksDouble}
             productColor={selectedProduct.color}
             productName={selectedProduct.name}
-            brickWidth={selectedProduct.dimensions.w}
+            brickLength={selectedProduct.dimensions.l}
             brickHeight={selectedProduct.dimensions.h}
           />
 
