@@ -63,9 +63,6 @@ export function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <Button variant="ghost" size="sm" asChild>
-            <Link href="/calculadora">Calcular obra</Link>
-          </Button>
           <Button variant="primary" size="sm" asChild>
             <Link href="/maestros">Soy Maestro</Link>
           </Button>
@@ -96,9 +93,6 @@ export function Navbar() {
               </Link>
             ))}
             <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-limonar-sandDark">
-              <Button variant="outline" size="md" asChild>
-                <Link href="/calculadora" onClick={() => setOpen(false)}>Calcular obra</Link>
-              </Button>
               <Button variant="primary" size="md" asChild>
                 <Link href="/maestros" onClick={() => setOpen(false)}>Soy Maestro</Link>
               </Button>
