@@ -13,36 +13,70 @@ import { brickProducts } from "@/lib/limonar-data";
 import type { CalculatorInputs, ProjectInputs } from "@/lib/calculator";
 import { cn } from "@/lib/utils";
 
-const BRICK_WALL_COLS = 8;
 const BRICK_WALL_ROWS = 6;
 
-function BrickWallPreview({ bricks }: { bricks: number }) {
-  const maxBricks = BRICK_WALL_COLS * BRICK_WALL_ROWS;
+interface BrickWallPreviewProps {
+  bricks: number;
+  productColor: string;
+  productName: string;
+  brickWidth: number;
+  brickHeight: number;
+}
+
+function BrickWallPreview({ bricks, productColor, productName, brickWidth, brickHeight }: BrickWallPreviewProps) {
+  // Calculate aspect ratio for realistic brick display
+  const aspectRatio = brickWidth / brickHeight;
+  const bricksPerRow = Math.ceil(8 / (aspectRatio / 2)); // Adjust columns based on aspect ratio
+  const maxBricks = bricksPerRow * BRICK_WALL_ROWS;
   const filled = Math.min(Math.round((bricks / 200) * maxBricks), maxBricks);
-  const cells = Array.from({ length: maxBricks }, (_, i) => i < filled);
+
+  // Create staggered brick pattern
+  const getBrickOffset = (row: number) => row % 2 === 1;
 
   return (
     <div className="bg-limonar-charcoal/5 rounded-xl p-4 border border-limonar-sandDark/30">
       <p className="text-xs text-limonar-mortar font-medium mb-3 uppercase tracking-wider">Vista previa del muro</p>
-      <div className="grid gap-1" style={{ gridTemplateColumns: `repeat(${BRICK_WALL_COLS}, 1fr)` }}>
-        {cells.map((isFilled, i) => (
-          <motion.div
-            key={i}
-            initial={false}
-            animate={{ opacity: isFilled ? 1 : 0.15, scale: isFilled ? 1 : 0.85 }}
-            transition={{ duration: 0.2, delay: isFilled ? i * 0.01 : 0 }}
-            className={cn(
-              "h-5 rounded-sm",
-              isFilled
-                ? "bg-limonar-terracotta shadow-brick"
-                : "bg-limonar-sand border border-limonar-sandDark/30"
-            )}
-            style={isFilled ? { backgroundImage: "linear-gradient(135deg, #C1440E 0%, #9B3509 100%)" } : undefined}
-          />
-        ))}
+      <div className="space-y-1">
+        {Array.from({ length: BRICK_WALL_ROWS }, (_, rowIndex) => {
+          const isOffset = getBrickOffset(rowIndex);
+          const bricksInRow = isOffset ? bricksPerRow - 1 : bricksPerRow;
+          const startIndex = rowIndex * bricksPerRow;
+          
+          return (
+            <div key={rowIndex} className="flex gap-1" style={{ paddingLeft: isOffset ? `${50 / bricksPerRow}%` : '0' }}>
+              {Array.from({ length: bricksInRow }, (_, colIndex) => {
+                const brickIndex = startIndex + colIndex;
+                const isFilled = brickIndex < filled;
+                
+                return (
+                  <motion.div
+                    key={colIndex}
+                    initial={false}
+                    animate={{ opacity: isFilled ? 1 : 0.15, scale: isFilled ? 1 : 0.9 }}
+                    transition={{ duration: 0.2, delay: isFilled ? brickIndex * 0.008 : 0 }}
+                    className={cn(
+                      "rounded-sm border",
+                      isFilled ? "shadow-sm" : "border-limonar-sandDark/30"
+                    )}
+                    style={{
+                      flex: 1,
+                      height: '20px',
+                      aspectRatio: aspectRatio,
+                      backgroundColor: isFilled ? productColor : '#E8DED1',
+                      backgroundImage: isFilled 
+                        ? `linear-gradient(135deg, ${productColor} 0%, ${productColor}dd 100%)`
+                        : undefined,
+                      borderColor: isFilled ? `${productColor}88` : undefined,
+                    }}
+                  />
+                );
+              })}
+            </div>
+          );
+        })}
       </div>
       <p className="text-xs text-limonar-mortar mt-3 text-center">
-        {bricks > 0 ? `${formatNumber(bricks)} ladrillos calculados` : "Ingresa las dimensiones del muro"}
+        {bricks > 0 ? `${formatNumber(bricks)} ${productName}` : "Ingresa las dimensiones del muro"}
       </p>
     </div>
   );
@@ -455,7 +489,13 @@ export function BrickCalculator() {
 
         {/* RIGHT — Results */}
         <div className="space-y-4">
-          <BrickWallPreview bricks={result.bricksDouble} />
+          <BrickWallPreview 
+            bricks={result.bricksDouble}
+            productColor={selectedProduct.color}
+            productName={selectedProduct.name}
+            brickWidth={selectedProduct.dimensions.w}
+            brickHeight={selectedProduct.dimensions.h}
+          />
 
           <div className="grid grid-cols-2 gap-3">
             <ResultCard
