@@ -286,9 +286,9 @@ export function BrickCalculator() {
             />
             <ResultCard
               icon={Package}
-              label="Estibas"
-              value={String(result.estibas)}
-              sub={`50 und/estiba · ${selectedProduct.name}`}
+              label="Estivas"
+              value={String(result.estivas)}
+              sub={`50 und/estiva · ${selectedProduct.name}`}
               color="lime"
             />
             <ResultCard
