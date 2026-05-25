@@ -137,7 +137,7 @@ export const brickProducts: BrickProduct[] = [
     id: "bloque",
     name: "Bloquelón Limonar",
     nickname: "El Estructural",
-    dimensions: { w: 80, h: 8, l: 30 },
+    dimensions: { w: 30, h: 8, l: 80 },
     weightKg: 7.5,
     bricksPerPallet: 30,
     pricePerUnit: { min: 5000, max: 5000 },
