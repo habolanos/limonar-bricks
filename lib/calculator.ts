@@ -10,7 +10,7 @@ export interface CalculatorInputs {
   wasteFactor: number;
   productId: string;
   pricePerUnit: number;
-  brickWidth: number;
+  brickLength: number;
   brickHeight: number;
   brickWeight: number;
 }
@@ -27,7 +27,7 @@ export interface ProjectInputs {
   wasteFactor: number;
   productId: string;
   pricePerUnit: number;
-  brickWidth: number;
+  brickLength: number;
   brickHeight: number;
   brickWeight: number;
 }
@@ -56,8 +56,8 @@ const DOOR_H = 2.1;
 const WINDOW_W = 1.2;
 const WINDOW_H = 1.2;
 
-export function calcBricksPerM2(brickWidthM: number, brickHeightM: number, mortarJointM: number): number {
-  return 1 / ((brickWidthM + mortarJointM) * (brickHeightM + mortarJointM));
+export function calcBricksPerM2(brickLengthM: number, brickHeightM: number, mortarJointM: number): number {
+  return 1 / ((brickLengthM + mortarJointM) * (brickHeightM + mortarJointM));
 }
 
 export function calculateProject(inputs: ProjectInputs): CalculatorResult {
@@ -104,7 +104,7 @@ export function calculateProject(inputs: ProjectInputs): CalculatorResult {
     wasteFactor,
     productId: inputs.productId,
     pricePerUnit,
-    brickWidth: inputs.brickWidth,
+    brickLength: inputs.brickLength,
     brickHeight: inputs.brickHeight,
     brickWeight: inputs.brickWeight,
   });
@@ -120,7 +120,7 @@ export function calculateBricks(inputs: CalculatorInputs): CalculatorResult {
     mortarJoint,
     wasteFactor,
     pricePerUnit,
-    brickWidth,
+    brickLength,
     brickHeight,
     brickWeight,
   } = inputs;
@@ -133,10 +133,11 @@ export function calculateBricks(inputs: CalculatorInputs): CalculatorResult {
   const netArea = Math.max(0, grossArea - openingsArea);
 
   // Convert brick dimensions from cm to meters
-  const brickWidthM = brickWidth / 100;
+  // Use length (l) and height (h) - the visible dimensions on the wall
+  const brickLengthM = brickLength / 100;
   const brickHeightM = brickHeight / 100;
   
-  const bricksPerM2 = calcBricksPerM2(brickWidthM, brickHeightM, mortarJointM);
+  const bricksPerM2 = calcBricksPerM2(brickLengthM, brickHeightM, mortarJointM);
   const bricksNet = Math.ceil(netArea * bricksPerM2);
   const wasteMultiplier = 1 + wasteFactor / 100;
   const bricksWithWaste = Math.ceil(bricksNet * wasteMultiplier);

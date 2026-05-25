@@ -140,7 +140,7 @@ export function BrickCalculator() {
     wallLength, wallHeight, thickness, doors, windows,
     mortarJoint, wasteFactor, productId,
     pricePerUnit: selectedProduct.pricePerUnit.min,
-    brickWidth: selectedProduct.dimensions.w,
+    brickLength: selectedProduct.dimensions.l,
     brickHeight: selectedProduct.dimensions.h,
     brickWeight: selectedProduct.weightKg,
   }), [wallLength, wallHeight, thickness, doors, windows, mortarJoint, wasteFactor, productId, selectedProduct]);
@@ -149,7 +149,7 @@ export function BrickCalculator() {
     perimeter, wallHeight: projectHeight, rooms, bathrooms, kitchen, livingRoom,
     thickness, mortarJoint, wasteFactor, productId,
     pricePerUnit: selectedProduct.pricePerUnit.min,
-    brickWidth: selectedProduct.dimensions.w,
+    brickLength: selectedProduct.dimensions.l,
     brickHeight: selectedProduct.dimensions.h,
     brickWeight: selectedProduct.weightKg,
   }), [perimeter, projectHeight, rooms, bathrooms, kitchen, livingRoom, thickness, mortarJoint, wasteFactor, productId, selectedProduct]);
