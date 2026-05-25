@@ -5,12 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Package, Weight, Calculator, Share2,
   MessageCircle, ChevronDown, Layers, DoorOpen, AppWindow,
-  TrendingDown, TrendingUp, AlertCircle, CheckCircle2
+  TrendingDown, TrendingUp, AlertCircle, CheckCircle2, Home, Ruler
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { calculateBricks, formatCOP, formatNumber, buildWhatsAppMessage } from "@/lib/calculator";
+import { calculateBricks, calculateProject, formatCOP, formatNumber, buildWhatsAppMessage } from "@/lib/calculator";
 import { brickProducts } from "@/lib/limonar-data";
-import type { CalculatorInputs } from "@/lib/calculator";
+import type { CalculatorInputs, ProjectInputs } from "@/lib/calculator";
 import { cn } from "@/lib/utils";
 
 const BRICK_WALL_COLS = 8;
@@ -78,7 +78,10 @@ function ResultCard({ icon: Icon, label, value, sub, color = "terracotta" }: {
 }
 
 export function BrickCalculator() {
+  const [mode, setMode] = useState<"simple" | "project">("simple");
   const [productId, setProductId] = useState("farol");
+  
+  // Simple mode states
   const [wallLength, setWallLength] = useState(5);
   const [wallHeight, setWallHeight] = useState(2.8);
   const [thickness, setThickness] = useState<"single" | "double">("single");
@@ -86,17 +89,35 @@ export function BrickCalculator() {
   const [windows, setWindows] = useState(1);
   const [mortarJoint, setMortarJoint] = useState(1);
   const [wasteFactor, setWasteFactor] = useState(5);
+  
+  // Project mode states
+  const [perimeter, setPerimeter] = useState(40);
+  const [projectHeight, setProjectHeight] = useState(2.8);
+  const [rooms, setRooms] = useState(3);
+  const [bathrooms, setBathrooms] = useState(2);
+  const [kitchen, setKitchen] = useState(true);
+  const [livingRoom, setLivingRoom] = useState(true);
+  
   const [shared, setShared] = useState(false);
 
   const selectedProduct = brickProducts.find((p) => p.id === productId) ?? brickProducts[0];
 
-  const inputs: CalculatorInputs = useMemo(() => ({
+  const simpleInputs: CalculatorInputs = useMemo(() => ({
     wallLength, wallHeight, thickness, doors, windows,
     mortarJoint, wasteFactor, productId,
     pricePerUnit: selectedProduct.pricePerUnit.min,
   }), [wallLength, wallHeight, thickness, doors, windows, mortarJoint, wasteFactor, productId, selectedProduct]);
 
-  const result = useMemo(() => calculateBricks(inputs), [inputs]);
+  const projectInputs: ProjectInputs = useMemo(() => ({
+    perimeter, wallHeight: projectHeight, rooms, bathrooms, kitchen, livingRoom,
+    thickness, mortarJoint, wasteFactor, productId,
+    pricePerUnit: selectedProduct.pricePerUnit.min,
+  }), [perimeter, projectHeight, rooms, bathrooms, kitchen, livingRoom, thickness, mortarJoint, wasteFactor, productId, selectedProduct]);
+
+  const result = useMemo(() => 
+    mode === "simple" ? calculateBricks(simpleInputs) : calculateProject(projectInputs),
+    [mode, simpleInputs, projectInputs]
+  );
 
   const handleWhatsApp = useCallback(() => {
     window.open(buildWhatsAppMessage(result, selectedProduct.name), "_blank");
@@ -130,6 +151,36 @@ export function BrickCalculator() {
         </div>
       </div>
 
+      {/* Mode Tabs */}
+      <div className="bg-limonar-sand/20 px-6 py-3 border-b border-limonar-sand">
+        <div className="flex gap-2">
+          <button
+            onClick={() => setMode("simple")}
+            className={cn(
+              "flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all",
+              mode === "simple"
+                ? "bg-white text-limonar-charcoal shadow-sm"
+                : "text-limonar-charcoalLight hover:text-limonar-charcoal"
+            )}
+          >
+            <Ruler className="h-4 w-4" />
+            Muro simple
+          </button>
+          <button
+            onClick={() => setMode("project")}
+            className={cn(
+              "flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all",
+              mode === "project"
+                ? "bg-white text-limonar-charcoal shadow-sm"
+                : "text-limonar-charcoalLight hover:text-limonar-charcoal"
+            )}
+          >
+            <Home className="h-4 w-4" />
+            Proyecto completo
+          </button>
+        </div>
+      </div>
+
       <div className="p-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* LEFT — Inputs */}
         <div className="space-y-5">
@@ -155,6 +206,9 @@ export function BrickCalculator() {
             </div>
           </div>
 
+          {/* Simple Mode Fields */}
+          {mode === "simple" && (
+            <>
           {/* Dimensions */}
           <div className="grid grid-cols-2 gap-4">
             <div>
@@ -270,6 +324,127 @@ export function BrickCalculator() {
               </div>
             </div>
           </details>
+            </>
+          )}
+
+          {/* Project Mode Fields */}
+          {mode === "project" && (
+            <>
+          {/* Perimeter */}
+          <div>
+            <label className="block text-sm font-semibold text-limonar-charcoal mb-1">
+              Perímetro del terreno
+            </label>
+            <div className="flex items-center gap-2">
+              <input
+                type="range" min={10} max={200} step={5} value={perimeter}
+                onChange={(e) => setPerimeter(parseFloat(e.target.value))}
+                className="flex-1 accent-limonar-terracotta"
+              />
+              <span className="text-sm font-mono w-16 text-right text-limonar-terracotta font-bold">
+                {perimeter}m
+              </span>
+            </div>
+            <p className="text-xs text-limonar-mortar mt-1">Suma de todos los lados del terreno</p>
+          </div>
+
+          {/* Project Height */}
+          <div>
+            <label className="block text-sm font-semibold text-limonar-charcoal mb-1">
+              Altura de paredes
+            </label>
+            <div className="flex items-center gap-2">
+              <input
+                type="range" min={2} max={6} step={0.1} value={projectHeight}
+                onChange={(e) => setProjectHeight(parseFloat(e.target.value))}
+                className="flex-1 accent-limonar-terracotta"
+              />
+              <span className="text-sm font-mono w-14 text-right text-limonar-terracotta font-bold">
+                {projectHeight}m
+              </span>
+            </div>
+          </div>
+
+          {/* Rooms and Bathrooms */}
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-semibold text-limonar-charcoal mb-1">
+                Habitaciones
+              </label>
+              <div className="flex items-center gap-3">
+                <button onClick={() => setRooms(Math.max(1, rooms - 1))}
+                  className="w-8 h-8 rounded-full bg-limonar-sand hover:bg-limonar-sandDark transition-colors font-bold text-limonar-charcoal">−</button>
+                <span className="text-lg font-bold text-limonar-charcoal w-6 text-center">{rooms}</span>
+                <button onClick={() => setRooms(rooms + 1)}
+                  className="w-8 h-8 rounded-full bg-limonar-terracotta hover:bg-limonar-terracottaDark text-white transition-colors font-bold">+</button>
+              </div>
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-limonar-charcoal mb-1">
+                Baños
+              </label>
+              <div className="flex items-center gap-3">
+                <button onClick={() => setBathrooms(Math.max(1, bathrooms - 1))}
+                  className="w-8 h-8 rounded-full bg-limonar-sand hover:bg-limonar-sandDark transition-colors font-bold text-limonar-charcoal">−</button>
+                <span className="text-lg font-bold text-limonar-charcoal w-6 text-center">{bathrooms}</span>
+                <button onClick={() => setBathrooms(bathrooms + 1)}
+                  className="w-8 h-8 rounded-full bg-limonar-terracotta hover:bg-limonar-terracottaDark text-white transition-colors font-bold">+</button>
+              </div>
+            </div>
+          </div>
+
+          {/* Additional Spaces */}
+          <div>
+            <label className="block text-sm font-semibold text-limonar-charcoal mb-2">
+              Espacios adicionales
+            </label>
+            <div className="space-y-2">
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={kitchen}
+                  onChange={(e) => setKitchen(e.target.checked)}
+                  className="w-4 h-4 accent-limonar-terracotta"
+                />
+                <span className="text-sm text-limonar-charcoal">Cocina</span>
+              </label>
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={livingRoom}
+                  onChange={(e) => setLivingRoom(e.target.checked)}
+                  className="w-4 h-4 accent-limonar-terracotta"
+                />
+                <span className="text-sm text-limonar-charcoal">Sala/Comedor</span>
+              </label>
+            </div>
+          </div>
+
+          {/* Thickness for project */}
+          <div>
+            <label className="block text-sm font-semibold text-limonar-charcoal mb-2">
+              <Layers className="inline h-4 w-4 mr-1 text-limonar-mortar" />
+              Tipo de muro
+            </label>
+            <div className="flex gap-3">
+              {(["single", "double"] as const).map((t) => (
+                <button
+                  key={t}
+                  onClick={() => setThickness(t)}
+                  className={cn(
+                    "flex-1 py-2.5 px-4 rounded-lg border-2 text-sm font-semibold transition-all",
+                    thickness === t
+                      ? "border-limonar-terracotta bg-limonar-terracotta text-white"
+                      : "border-limonar-sand text-limonar-charcoalLight hover:border-limonar-terracotta/40"
+                  )}
+                >
+                  {t === "single" ? "Sencillo (10cm)" : "Doble (20cm)"}
+                </button>
+              ))}
+            </div>
+          </div>
+            </>
+          )}
         </div>
 
         {/* RIGHT — Results */}

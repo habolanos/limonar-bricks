@@ -12,6 +12,20 @@ export interface CalculatorInputs {
   pricePerUnit: number;
 }
 
+export interface ProjectInputs {
+  perimeter: number;
+  wallHeight: number;
+  rooms: number;
+  bathrooms: number;
+  kitchen: boolean;
+  livingRoom: boolean;
+  thickness: "single" | "double";
+  mortarJoint: number;
+  wasteFactor: number;
+  productId: string;
+  pricePerUnit: number;
+}
+
 export interface CalculatorResult {
   grossArea: number;
   openingsArea: number;
@@ -41,6 +55,53 @@ const WINDOW_H = 1.2;
 
 export function calcBricksPerM2(mortarJointM: number): number {
   return 1 / ((BRICK_W + mortarJointM) * (BRICK_H + mortarJointM));
+}
+
+export function calculateProject(inputs: ProjectInputs): CalculatorResult {
+  const {
+    perimeter,
+    wallHeight,
+    rooms,
+    bathrooms,
+    kitchen,
+    livingRoom,
+    thickness,
+    mortarJoint,
+    wasteFactor,
+    pricePerUnit,
+  } = inputs;
+
+  // Calculate total wall length based on project components
+  // Perimeter walls
+  const perimeterWallLength = perimeter;
+  
+  // Internal divisions (estimate based on rooms and spaces)
+  const internalWallsPerRoom = 3; // Average walls per room
+  const internalWallLengthPerRoom = 3.5; // Average length per internal wall
+  const roomWalls = rooms * internalWallsPerRoom * internalWallLengthPerRoom;
+  
+  const bathroomWalls = bathrooms * 3 * 2.5; // Bathrooms have smaller walls
+  const kitchenWalls = kitchen ? 3 * 3 : 0; // Kitchen walls
+  const livingRoomWalls = livingRoom ? 2 * 4 : 0; // Living room partial walls
+  
+  const totalWallLength = perimeterWallLength + roomWalls + bathroomWalls + kitchenWalls + livingRoomWalls;
+  
+  // Calculate openings (doors and windows based on spaces)
+  const totalDoors = 1 + rooms + bathrooms + (kitchen ? 1 : 0); // Entrance + room doors
+  const totalWindows = rooms + (livingRoom ? 2 : 0) + (kitchen ? 1 : 0); // Windows per space
+  
+  // Use the existing calculateBricks function with calculated values
+  return calculateBricks({
+    wallLength: totalWallLength,
+    wallHeight,
+    thickness,
+    doors: totalDoors,
+    windows: totalWindows,
+    mortarJoint,
+    wasteFactor,
+    productId: inputs.productId,
+    pricePerUnit,
+  });
 }
 
 export function calculateBricks(inputs: CalculatorInputs): CalculatorResult {
