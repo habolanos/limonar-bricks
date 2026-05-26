@@ -131,7 +131,7 @@ export const brickProducts: BrickProduct[] = [
       "Pequeñas construcciones",
     ],
     color: "#B5651D",
-    tag: undefined,
+    tag: "Tradición",
   },
   {
     id: "bloque",
