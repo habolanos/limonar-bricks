@@ -1,4 +1,4 @@
-import { pricingTiers } from "./limonar-data";
+import { pricingTiers, companyInfo } from "./limonar-data";
 
 export interface CalculatorInputs {
   wallLength: number;
@@ -204,7 +204,7 @@ export function buildWhatsAppMessage(result: CalculatorResult, productName: stri
     `💰 Estimado: ${formatCOP(result.priceRange.min)} – ${formatCOP(result.priceRange.max)}\n\n` +
     `¿Me pueden dar una cotización formal? Gracias.`
   );
-  return `https://wa.me/573001234567?text=${text}`;
+  return `https://wa.me/${companyInfo.contact.whatsapp}?text=${text}`;
 }
 
 export function generateShareCard(result: CalculatorResult): Record<string, string> {

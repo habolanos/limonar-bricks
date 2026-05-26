@@ -317,7 +317,7 @@ function CTASection() {
               </Link>
             </Button>
             <Button variant="outline" size="xl" asChild>
-              <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer">
+              <a href={`https://wa.me/${companyInfo.contact.whatsapp}`} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="h-5 w-5" />
                 Hablar con un asesor
               </a>

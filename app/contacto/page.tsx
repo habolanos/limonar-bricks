@@ -136,7 +136,7 @@ export default function ContactoPage() {
                   Para cotizaciones urgentes y pedidos inmediatos. Nuestro equipo está disponible de lunes a sábado de 7am a 6pm.
                 </p>
                 <Button variant="whatsapp" size="md" asChild>
-                  <a href="https://wa.me/573001234567?text=Hola,%20quiero%20información%20sobre%20Limonar"
+                  <a href={`https://wa.me/${companyInfo.contact.whatsapp}?text=Hola,%20quiero%20información%20sobre%20Limonar`}
                     target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="h-5 w-5" />
                     Escribir por WhatsApp
