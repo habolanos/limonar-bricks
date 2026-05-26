@@ -225,7 +225,7 @@ Este proyecto es propietario y confidencial. No está permitida su distribución
 
 **Ladrillera Limonar S.A.S.**  
 📍 Km 6 Vía Puerto Tejada-Villa Rica, Cauca, Colombia  
-📧 hola@limonar.co  
+📧 hola@ladrilleralimonar.co  
 📱 +57 315 170 0698  
 
 🌐 [www.limonar.co](https://limonar.co)  

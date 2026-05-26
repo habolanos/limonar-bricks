@@ -13,7 +13,7 @@ export const companyInfo = {
   },
   contact: {
     phone: "+57 315 170 0698",
-    email: "hola@limonar.co",
+    email: "hola@ladrilleralimonar.co",
     whatsapp: "573151700698",
   },
   social: {
