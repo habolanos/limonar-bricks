@@ -30,7 +30,7 @@ export default function PoliticaDatosPage() {
                 1. Introducción
               </h2>
               <p className="text-limonar-charcoalLight leading-relaxed mb-4">
-                <strong>LADRILLERA LIMONAR S.A.S.</strong> (en adelante "LIMONAR" o "la Empresa"), identificada con NIT 900.XXX.XXX-X, 
+                <strong>LADRILLERA LIMONAR S.A.S.</strong> (en adelante "LIMONAR" o "la Empresa"), 
                 con domicilio principal en Km 6 Vía Puerto Tejada-Villa Rica, Cauca, Colombia, en cumplimiento de la Ley 1581 de 2012, 
                 el Decreto 1377 de 2013 y demás normas concordantes sobre protección de datos personales, así como el Reglamento General 
                 de Protección de Datos (GDPR) de la Unión Europea, adopta la presente Política de Tratamiento de Datos Personales.
