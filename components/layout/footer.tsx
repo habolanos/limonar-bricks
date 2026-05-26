@@ -110,13 +110,23 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-limonar-sandDark flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-limonar-charcoalLight">
-            © 2025 Ladrillera Limonar S.A.S. — Todos los derechos reservados.
-          </p>
-          <p className="text-sm text-limonar-mortar font-display italic">
-            "Hecho en Colombia. Construido para durar más que nosotros."
-          </p>
+        <div className="mt-12 pt-6 border-t border-limonar-sandDark">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-3">
+            <p className="text-sm text-limonar-charcoalLight">
+              © 2025 Ladrillera Limonar S.A.S. — Todos los derechos reservados.
+            </p>
+            <p className="text-sm text-limonar-mortar font-display italic">
+              "Hecho en Colombia. Construido para durar más que nosotros."
+            </p>
+          </div>
+          <div className="text-center">
+            <Link 
+              href="/politica-datos" 
+              className="text-xs text-limonar-charcoalLight hover:text-limonar-lime transition-colors underline"
+            >
+              Política de Tratamiento de Datos Personales
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
