@@ -398,7 +398,7 @@ export const marketPhases: MarketPhase[] = [
 // ── Stats ─────────────────────────────────────────────────────────────────────
 
 export const companyStats = [
-  { value: "1.2M+", label: "Ladrillos producidos/año" },
+  { value: "150K+", label: "Ladrillos producidos/año" },
   { value: "380+", label: "Maestros certificados" },
   { value: "12", label: "Municipios activos" },
   { value: "98.3%", label: "Satisfacción de clientes" },
