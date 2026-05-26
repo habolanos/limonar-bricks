@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { MessageCircle, Mail, MapPin, Phone, Send, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { companyInfo } from "@/lib/limonar-data";
 
 export default function ContactoPage() {
   const [sent, setSent] = useState(false);
@@ -146,9 +147,9 @@ export default function ContactoPage() {
               {/* Contact details */}
               <div className="bg-white rounded-2xl p-6 border border-limonar-sand/60 shadow-sm space-y-4">
                 {[
-                  { icon: MapPin, label: "Ubicación", value: "Km 4 Vía Palmira–Cali, Valle del Cauca, Colombia" },
-                  { icon: Phone, label: "Teléfono", value: "+57 300 123 4567" },
-                  { icon: Mail, label: "Correo", value: "hola@limonar.co" },
+                  { icon: MapPin, label: "Ubicación", value: `${companyInfo.location.fullAddress}, ${companyInfo.location.country}` },
+                  { icon: Phone, label: "Teléfono", value: companyInfo.contact.phone },
+                  { icon: Mail, label: "Correo", value: companyInfo.contact.email },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-3">
                     <div className="w-9 h-9 rounded-lg bg-limonar-terracotta/10 flex items-center justify-center flex-shrink-0">

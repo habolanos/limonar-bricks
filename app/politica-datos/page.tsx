@@ -1,4 +1,5 @@
 import { Shield, Lock, Eye, FileText, Mail, Phone, MapPin } from "lucide-react";
+import { companyInfo } from "@/lib/limonar-data";
 
 export default function PoliticaDatosPage() {
   return (
@@ -31,7 +32,7 @@ export default function PoliticaDatosPage() {
               </h2>
               <p className="text-limonar-charcoalLight leading-relaxed mb-4">
                 <strong>LADRILLERA LIMONAR S.A.S.</strong> (en adelante "LIMONAR" o "la Empresa"), 
-                con domicilio principal en Km 6 Vía Puerto Tejada-Villa Rica, Cauca, Colombia, en cumplimiento de la Ley 1581 de 2012, 
+                con domicilio principal en {companyInfo.location.fullAddress}, {companyInfo.location.country}, en cumplimiento de la Ley 1581 de 2012, 
                 el Decreto 1377 de 2013 y demás normas concordantes sobre protección de datos personales, así como el Reglamento General 
                 de Protección de Datos (GDPR) de la Unión Europea, adopta la presente Política de Tratamiento de Datos Personales.
               </p>
@@ -153,14 +154,14 @@ export default function PoliticaDatosPage() {
                   <MapPin className="h-5 w-5 text-limonar-terracotta flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-semibold text-limonar-charcoal">Dirección física:</p>
-                    <p className="text-limonar-charcoalLight">Km 6 Vía Puerto Tejada-Villa Rica, Cauca, Colombia</p>
+                    <p className="text-limonar-charcoalLight">{companyInfo.location.fullAddress}, {companyInfo.location.country}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Phone className="h-5 w-5 text-limonar-terracotta flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-semibold text-limonar-charcoal">Teléfono:</p>
-                    <p className="text-limonar-charcoalLight">+57 300 123 4567</p>
+                    <p className="text-limonar-charcoalLight">{companyInfo.contact.phone}</p>
                   </div>
                 </div>
               </div>
