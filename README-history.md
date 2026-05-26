@@ -88,7 +88,7 @@
 ### 🏢 Información de la Empresa
 - **Razón Social**: LADRILLERA LIMONAR S.A.S.
 - **Ubicación**: Km 6 Vía Puerto Tejada-Villa Rica, Cauca, Colombia
-- **Contacto**: protecciondatos@limonar.co
+- **Contacto**: protecciondatos@ladrilleralimonar.co
 
 ### 🛠️ Stack Tecnológico
 - **Framework**: Next.js 14.2.3

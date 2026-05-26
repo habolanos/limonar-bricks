@@ -147,7 +147,7 @@ export default function PoliticaDatosPage() {
                   <Mail className="h-5 w-5 text-limonar-terracotta flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-semibold text-limonar-charcoal">Correo electrónico:</p>
-                    <p className="text-limonar-charcoalLight">protecciondatos@limonar.co</p>
+                    <p className="text-limonar-charcoalLight">protecciondatos@ladrilleralimonar.co</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -254,7 +254,7 @@ export default function PoliticaDatosPage() {
               <p className="text-limonar-charcoalLight">
                 LIMONAR no recolecta intencionalmente datos personales de menores de 18 años sin el consentimiento de sus padres o representantes legales. 
                 Si un menor proporciona información sin autorización, los padres o tutores pueden solicitar su eliminación contactando a 
-                protecciondatos@limonar.co.
+                protecciondatos@ladrilleralimonar.co.
               </p>
             </div>
 
@@ -305,8 +305,8 @@ export default function PoliticaDatosPage() {
               <p className="text-limonar-charcoalLight mb-4">
                 Para cualquier consulta sobre esta política, contáctenos en:
               </p>
-              <a href="mailto:protecciondatos@limonar.co" className="text-limonar-lime hover:text-limonar-limeLight font-semibold">
-                protecciondatos@limonar.co
+              <a href="mailto:protecciondatos@ladrilleralimonar.co" className="text-limonar-lime hover:text-limonar-limeLight font-semibold">
+                protecciondatos@ladrilleralimonar.co
               </a>
             </div>
           </div>
